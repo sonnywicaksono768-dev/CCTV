@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
-    header("Location: index.php");
+    header("Location: index.html");
     exit;
 }
 header('Content-Type: text/html; charset=utf-8');
@@ -523,7 +523,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
 
                         <div className="relative flex items-center gap-1.5 shrink-0">
                             <LiveClock className="hidden xl:block text-[11.5px] font-medium pr-3 mr-1 border-r border-white/15 text-imipas-platinum/80" />
-                            <a href="matrix.php" title="Tampilan Matrix" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="grid" /><span className="hidden sm:inline">Matrix</span></a>
+                            <a href="matrix.html" title="Tampilan Matrix" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="grid" /><span className="hidden sm:inline">Matrix</span></a>
                             <button onClick={() => setShowInfo(true)} title="Informasi Sistem" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="info" /><span className="hidden sm:inline">Info</span></button>
                             <a href="logout.php" className={navBtn} style={{ color: '#FDA4AF' }}
                                onMouseOver={e => e.currentTarget.style.background = 'rgba(244,63,94,0.15)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>

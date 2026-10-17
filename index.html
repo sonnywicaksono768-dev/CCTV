@@ -18,7 +18,7 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: same-origin');
 
 if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true) {
-    header('Location: dashboard.php');
+    header('Location: dashboard.html');
     exit;
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             unset($_SESSION['tries'], $_SESSION['lock_until']);
             $_SESSION['csrf'] = bin2hex(random_bytes(32));
             $_SESSION['is_logged_in'] = true;
-            header('Location: dashboard.php');
+            header('Location: dashboard.html');
             exit;
         }
 

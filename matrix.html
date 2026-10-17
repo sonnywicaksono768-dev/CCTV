@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
-    header("Location: index.php");
+    header("Location: index.html");
     exit;
 }
 header('Content-Type: text/html; charset=utf-8');
@@ -482,7 +482,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
                         <div className="goldline absolute bottom-0 inset-x-0 h-[3px]" />
                         <div className="relative flex flex-wrap items-center gap-x-2 gap-y-2 px-2.5 sm:px-3 lg:px-4 py-2 lg:flex-nowrap lg:gap-3 lg:py-0" style={{ minHeight: '56px' }}>
                             <div className="order-1 flex items-center gap-2 min-w-0">
-                                <a href="dashboard.php" aria-label="Kembali ke dashboard" title="Kembali ke dashboard"
+                                <a href="dashboard.html" aria-label="Kembali ke dashboard" title="Kembali ke dashboard"
                                    className={`${btn} w-8 shrink-0 hover:bg-white/15`} style={ghost}>
                                     <Icon name="arrowLeft" className="w-3.5 h-3.5" />
                                 </a>
