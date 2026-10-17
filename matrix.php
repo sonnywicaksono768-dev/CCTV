@@ -1,0 +1,624 @@
+<?php
+session_start();
+if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
+    header("Location: index.php");
+    exit;
+}
+header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: no-store');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: same-origin');
+$dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Matrix View &mdash; PANTAUPAS KALSEL</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: { sans: ['"Titillium Web"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'] },
+                colors: { imipas: { blue: '#08192B', blue2: '#0F2A47', blue3: '#163B5E', gold: '#D6A34C', goldSoft: '#E7C481', platinum: '#E0E2E3' } }
+            } }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+
+    <!-- Versi cache berubah hanya saat data kamera diubah -->
+    <script src="data_kamera.js?v=<?php echo (int) $dataVer; ?>"></script>
+
+    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+
+    <style>
+        html, body { margin: 0; height: 100%; -webkit-tap-highlight-color: transparent; }
+        #root { height: 100%; }
+        body {
+            background-color: #E0E2E3;
+            background-image: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(7,33,61,.12) 0%, transparent 70%), radial-gradient(rgba(7,33,61,.06) 1px, transparent 1px);
+            background-size: 100% 100%, 24px 24px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spin-slow { animation: spin .9s linear infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+        .blink { animation: blink 1.2s ease-in-out infinite; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        .fade-up { animation: fadeUp .45s ease-out both; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+        .stripe { background-image: repeating-linear-gradient(135deg, #0F2A47 0 14px, #08192B 14px 28px); }
+        .dots { background-image: radial-gradient(rgba(224,226,227,.1) 1px, transparent 1px); background-size: 18px 18px; }
+        .goldline { background: linear-gradient(90deg, transparent, #D6A34C 30%, #E7C481 50%, #D6A34C 70%, transparent); }
+        select { background-image: none !important; }
+        select option { background: #fff; color: #08192B; }
+
+        .field {
+            width: 100%; background: #fff; border: 1px solid rgba(7,33,61,.2);
+            border-radius: 10px; padding: 10px 12px 10px 38px; color: #08192B; font-size: 13px; font-weight: 500;
+            font-family: 'Titillium Web', sans-serif; outline: none; transition: border-color .2s, box-shadow .2s;
+        }
+        .field::placeholder { color: rgba(7,33,61,.5); }
+        .field:focus { border-color: #08192B; box-shadow: 0 0 0 3px rgba(238,191,99,.55); }
+        .field-sm {
+            height: 32px; padding: 0 28px 0 32px; font-size: 12px; font-weight: 600;
+            background: rgba(224,226,227,.08); border-color: rgba(224,226,227,.2); color: #E0E2E3;
+        }
+        .field-sm:focus { background: rgba(224,226,227,.12); border-color: #D6A34C; box-shadow: 0 0 0 3px rgba(238,191,99,.3); }
+        .ctl { opacity: 1; }
+        @media (hover: hover) and (pointer: fine) {
+            .ctl { opacity: 0; transition: opacity .15s; }
+            .grp:hover .ctl, .ctl:focus-within { opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) { .spin-slow, .blink, .animate-pulse, .fade-up { animation: none; } }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-thumb { background: rgba(128,140,155,.45); border-radius: 4px; }
+    </style>
+</head>
+<body class="font-sans text-imipas-blue antialiased selection:bg-imipas-gold selection:text-imipas-blue">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef, useMemo, useCallback } = React;
+
+        const PATHS = {
+            arrowLeft: "M10 19l-7-7m0 0l7-7m-7 7h18",
+            camera: "M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9zM15 13a3 3 0 11-6 0 3 3 0 016 0z",
+            x: "M6 18L18 6M6 6l12 12",
+            maximize: "M4 8V4h4M4 4l5 5M20 8V4h-4M20 4l-5 5M4 16v4h4M4 20l5-5M20 16v4h-4M20 20l-5-5",
+            minimize: "M9 3v4H5M9 7L4 2M15 3v4h4M15 7l5-5M9 21v-4H5M9 17l-5 5M15 21v-4h4M15 17l5 5",
+            swap: "M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4",
+            rotate: "M21 12a9 9 0 11-2.64-6.36M21 3v6h-6",
+            plus: "M12 4v16m8-8H4",
+            mapPin: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
+            grid: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
+            chevronDown: "M19 9l-7 7-7-7",
+            search: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        };
+        const Icon = ({ name, className = "w-4 h-4", style }) => {
+            if (name === 'play') return <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 001.52.85l11-6.86a1 1 0 000-1.7l-11-6.86A1 1 0 008 5.14z" /></svg>;
+            if (name === 'stop') return <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2" /></svg>;
+            return <svg className={className} style={style} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={PATHS[name] || PATHS.camera} /></svg>;
+        };
+
+        const LiveClock = ({ className = "" }) => {
+            const [now, setNow] = useState(new Date());
+            useEffect(() => { const t = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(t); }, []);
+            const p = (n) => String(n).padStart(2, "0");
+            return <span className={`font-mono tabular-nums ${className}`}>{p(now.getDate())}/{p(now.getMonth()+1)}/{now.getFullYear()}&nbsp;&nbsp;{p(now.getHours())}:{p(now.getMinutes())}:{p(now.getSeconds())}</span>;
+        };
+
+        /* ---------- DATA & UTILITAS ---------- */
+        // Data dari data_kamera.js (dengan pengaman bila file gagal dimuat)
+        const DATA = (typeof INITIAL_CCTV_DATA !== 'undefined' && Array.isArray(INITIAL_CCTV_DATA)) ? INITIAL_CCTV_DATA : [];
+        
+        // Utamakan daftar UPT dari GROUP_LIST bila tersedia di data_kamera.js
+        const rawUptList = (typeof GROUP_LIST !== 'undefined' && Array.isArray(GROUP_LIST))
+            ? GROUP_LIST.filter(g => DATA.some(c => c.grup === g))
+            : [...new Set(DATA.map(c => c.grup))];
+            
+        const uptList = rawUptList.length > 0 ? rawUptList : [...new Set(DATA.map(c => c.grup))];
+        const uptCounts = (() => { const m = {}; DATA.forEach(c => { m[c.grup] = (m[c.grup] || 0) + 1; }); return m; })();
+        const camOfUpt = (u) => DATA.filter(c => c.grup === u);
+
+        const GRID_OPTIONS = [2, 4, 6, 8, 10, 12];
+        const GRID_CLASS = {
+            2:  "grid-cols-1 sm:grid-cols-2 lg:grid-rows-1",
+            4:  "grid-cols-1 sm:grid-cols-2 lg:grid-rows-2",
+            6:  "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2",
+            8:  "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2",
+            10: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-2",
+            12: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-3"
+        };
+        const fitGrid = (n) => GRID_OPTIONS.find(o => o >= n) || GRID_OPTIONS[GRID_OPTIONS.length - 1];
+        
+        const store = {
+            get: (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+            set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }
+        };
+        const withParam = (url, k, v) => url + (url.indexOf('?') >= 0 ? '&' : '?') + k + '=' + v;
+
+        const fsElement = () => document.fullscreenElement || document.webkitFullscreenElement || null;
+        const enterFS = (el) => {
+            const req = el.requestFullscreen || el.webkitRequestFullscreen;
+            if (!req) return false;
+            try { const r = req.call(el); if (r && r.catch) r.catch(() => {}); } catch (e) { return false; }
+            return true;
+        };
+        const exitFS = () => {
+            const ex = document.exitFullscreen || document.webkitExitFullscreen;
+            if (ex) { try { const r = ex.call(document); if (r && r.catch) r.catch(() => {}); } catch (e) {} }
+        };
+
+        const savedUpt = store.get('matrix.upt');
+        const FIRST_UPT = uptList.includes(savedUpt) ? savedUpt : (uptList[0] || '');
+
+        const CellBtn = ({ onClick, label, children }) => (
+            <button onClick={onClick} aria-label={label} title={label}
+                    className="w-7 h-7 lg:w-8 lg:h-8 rounded-lg flex items-center justify-center text-white/90 hover:text-imipas-gold bg-imipas-blue/75 hover:bg-imipas-blue backdrop-blur-md border border-white/20 hover:border-imipas-gold/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft">
+                {children}
+            </button>
+        );
+
+        /* ---------- WATERMARK / FOOTER ---------- */
+        const Watermark = ({ hidden }) => {
+            const year = new Date().getFullYear();
+            return (
+                <footer className={`shrink-0 px-3 pt-1 text-center transition-opacity duration-300 ${hidden ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                        style={{ paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))' }}>
+                    <p className="text-[10px] leading-[14px] text-balance"
+                       style={{ color: 'rgba(7,33,61,.6)' }}>
+                        <span className="font-bold tracking-wider text-imipas-blue/80">PANTAUPAS</span> &copy; {year} <span className="font-bold text-imipas-gold">&middot;</span> Tim Perencanaan dan RB Kanwil Ditjen PAS Kalsel X POLIBAN
+                    </p>
+                </footer>
+            );
+        };
+
+        /* ---------- TILE KAMERA ---------- */
+        const MatrixPlayer = ({ camera, slotNumber, isLive, showGrup, startDelay = 0, onChangeClick, onStatus }) => {
+            const box = useRef(null), vid = useRef(null);
+            const [status, setStatusRaw] = useState('standby');
+            const [fs, setFs] = useState(false);
+            const [imgErr, setImgErr] = useState(false);
+            const [nonce, setNonce] = useState(() => Date.now());
+            const [retry, setRetry] = useState(0);
+            const [ready, setReady] = useState(startDelay === 0);
+            const cb = useRef(onStatus);
+            useEffect(() => { cb.current = onStatus; }, [onStatus]);
+            const setStatus = useCallback((s) => { setStatusRaw(s); if (cb.current) cb.current(camera.id, s); }, [camera.id]);
+
+            useEffect(() => {
+                if (!isLive) { setReady(startDelay === 0); return; }
+                if (startDelay === 0) { setReady(true); return; }
+                const t = setTimeout(() => setReady(true), startDelay);
+                return () => clearTimeout(t);
+            }, [isLive, startDelay]);
+
+            useEffect(() => {
+                if (isLive) return;
+                const t = setInterval(() => { setNonce(Date.now()); setImgErr(false); }, 20000);
+                return () => clearInterval(t);
+            }, [isLive]);
+
+            useEffect(() => {
+                const v = vid.current;
+                let hls = null, retryTimer = null, off = null, playWatch = null, stallWatch = null;
+                let lastFrag = Date.now(), netErr = 0, mediaErr = 0;
+                if (!isLive || !ready) { setStatus('standby'); return; }
+                if (!camera.streamUrl || !v) { setStatus('offline'); return; }
+
+                setStatus('connecting');
+                const again = () => { clearTimeout(retryTimer); retryTimer = setTimeout(() => setRetry(k => k + 1), 5000); };
+                const fail = () => { setStatus('offline'); if (hls) { hls.destroy(); hls = null; } again(); };
+
+                playWatch = setInterval(() => {
+                    if (v.paused && (v.readyState >= 2 || v.buffered.length)) v.play().catch(() => {});
+                }, 1500);
+
+                if (window.Hls && Hls.isSupported()) {
+                    hls = new Hls({
+                        enableWorker: true,
+                        lowLatencyMode: true,
+                        capLevelToPlayerSize: true,
+                        liveSyncDurationCount: 2,
+                        liveMaxLatencyDurationCount: 4,
+                        maxBufferLength: 3,
+                        maxMaxBufferLength: 5,
+                        backBufferLength: 0,
+                        manifestLoadingTimeOut: 4500,
+                        manifestLoadingMaxRetry: 3,
+                        levelLoadingTimeOut: 4500,
+                        levelLoadingMaxRetry: 3,
+                        fragLoadingTimeOut: 4500,
+                        fragLoadingMaxRetry: 4
+                    });
+                    hls.loadSource(camera.streamUrl);
+                    hls.attachMedia(v);
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => v.play().catch(() => {}));
+                    hls.on(Hls.Events.FRAG_LOADED, () => { lastFrag = Date.now(); netErr = 0; mediaErr = 0; setStatus('online'); });
+                    hls.on(Hls.Events.ERROR, (_e, d) => {
+                        if (!d.fatal) return;
+                        if (d.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            if (++mediaErr > 3) { fail(); return; }
+                            setStatus('connecting'); hls.recoverMediaError(); return;
+                        }
+                        if (d.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                            if (++netErr > 2) { fail(); return; }
+                            setStatus('connecting'); hls.startLoad(); return;
+                        }
+                        fail();
+                    });
+
+                    stallWatch = setInterval(() => { if (hls && Date.now() - lastFrag > 25000) fail(); }, 5000);
+                } else if (v.canPlayType('application/vnd.apple.mpegurl')) {
+                    const ok = () => setStatus('online'), bad = () => { setStatus('offline'); again(); };
+                    v.addEventListener('loadeddata', ok);
+                    v.addEventListener('error', bad);
+                    v.src = camera.streamUrl;
+                    v.play().catch(() => {});
+                    off = () => { v.removeEventListener('loadeddata', ok); v.removeEventListener('error', bad); v.removeAttribute('src'); v.load(); };
+                } else { setStatus('offline'); }
+
+                return () => {
+                    clearTimeout(retryTimer); clearInterval(playWatch); clearInterval(stallWatch);
+                    if (hls) { hls.destroy(); hls = null; }
+                    if (off) off();
+                };
+            }, [camera, isLive, ready, retry, setStatus]);
+
+            useEffect(() => {
+                const fn = () => setFs(fsElement() === box.current);
+                document.addEventListener('fullscreenchange', fn);
+                document.addEventListener('webkitfullscreenchange', fn);
+                return () => { document.removeEventListener('fullscreenchange', fn); document.removeEventListener('webkitfullscreenchange', fn); };
+            }, []);
+            const toggleFS = () => {
+                if (fsElement()) { exitFS(); return; }
+                if (!enterFS(box.current) && vid.current && vid.current.webkitEnterFullscreen) vid.current.webkitEnterFullscreen();
+            };
+
+            const online = status === 'online';
+            const offline = status === 'offline';
+            const snap = camera.snapshotUrl ? withParam(camera.snapshotUrl, 't', nonce) : '';
+
+            return (
+                <div ref={box} className="grp relative w-full h-full bg-black overflow-hidden rounded-lg">
+                    {isLive ? (
+                        <video ref={vid} autoPlay muted playsInline poster={snap || undefined} className={`w-full h-full object-contain bg-black ${offline ? 'opacity-30 grayscale' : ''}`} />
+                    ) : snap && !imgErr ? (
+                        <img src={snap} alt={camera.nama} onError={() => setImgErr(true)} className={`absolute inset-0 w-full h-full object-contain ${offline ? 'opacity-40 grayscale' : 'opacity-75'}`} />
+                    ) : (
+                        <div className="absolute inset-0 flex items-center justify-center bg-imipas-blue2">
+                            <div className="absolute inset-0 dots opacity-60" />
+                            <Icon name="camera" className="w-7 h-7 text-white/30 relative" />
+                        </div>
+                    )}
+
+                    {isLive && offline && <div className="absolute inset-0 z-10 stripe pointer-events-none" />}
+
+                    {isLive && !online && !offline && (
+                        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-imipas-blue/60 pointer-events-none">
+                            <div className="w-6 h-6 rounded-full border-2 border-white/20 border-t-imipas-gold spin-slow mb-1.5" />
+                            <span className="text-[10.5px] font-semibold text-white/85">Menghubungkan&hellip;</span>
+                        </div>
+                    )}
+
+                    <div className="absolute top-0 inset-x-0 z-20 px-2 py-1.5 lg:px-2.5 lg:py-2 bg-gradient-to-b from-black/55 via-black/20 to-transparent flex items-start justify-between gap-2 pointer-events-none">
+                        <div className="flex items-start gap-1.5 min-w-0">
+                            <span className="shrink-0 font-mono text-[9px] lg:text-[10px] font-medium tabular-nums leading-none px-1.5 py-1 rounded bg-imipas-gold text-imipas-blue">{String(slotNumber).padStart(2, '0')}</span>
+                            <div className="flex flex-col min-w-0">
+                                <span className="text-[11px] lg:text-[12px] font-semibold text-white truncate leading-tight">{camera.nama}</span>
+                                {showGrup && <span className="text-[9px] lg:text-[10px] font-medium text-imipas-goldSoft/85 truncate mt-0.5">{camera.grup}</span>}
+                            </div>
+                        </div>
+                        {online ? (
+                            <span className="flex items-center gap-1 text-[9px] lg:text-[10px] font-mono font-medium text-white px-1.5 py-0.5 rounded shrink-0 bg-rose-600">
+                                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />LIVE
+                            </span>
+                        ) : offline ? (
+                            <span className="text-[9px] lg:text-[10px] font-mono font-medium px-1.5 py-0.5 rounded shrink-0" style={{ color: '#FDA4AF', background: 'rgba(244,63,94,.18)', border: '1px solid rgba(244,63,94,.45)' }}>OFF</span>
+                        ) : null}
+                    </div>
+
+                    <div className="ctl absolute bottom-2 right-2 z-30 flex gap-1.5">
+                        {!fs && <CellBtn onClick={onChangeClick} label="Ganti kamera"><Icon name="swap" className="w-3.5 h-3.5" /></CellBtn>}
+                        <CellBtn onClick={toggleFS} label={fs ? "Keluar layar penuh" : "Layar penuh"}><Icon name={fs ? "minimize" : "maximize"} className="w-3.5 h-3.5" /></CellBtn>
+                    </div>
+                </div>
+            );
+        };
+
+        const EmptySlot = ({ slotNumber, onClick }) => (
+            <button onClick={onClick} aria-label={`Pilih kamera untuk slot ${slotNumber}`}
+                    className="relative w-full h-full flex flex-col items-center justify-center rounded-lg border border-dashed text-imipas-platinum/70 hover:text-imipas-gold hover:border-imipas-gold/60 hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft"
+                    style={{ background: 'rgba(11,44,82,.45)', borderColor: 'rgba(224,226,227,.25)' }}>
+                <span className="absolute top-2 left-2.5 lg:top-2.5 lg:left-3 font-mono text-[9px] lg:text-[10px] font-medium tabular-nums text-white/45">{String(slotNumber).padStart(2, '0')}</span>
+                <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-white/10 flex items-center justify-center mb-1.5 lg:mb-2"><Icon name="plus" className="w-3.5 h-3.5 lg:w-4 lg:h-4" /></div>
+                <span className="text-[11px] lg:text-[12.5px] font-semibold">Pilih kamera</span>
+            </button>
+        );
+
+        /* ---------- APP ---------- */
+        function App() {
+            const initSize = fitGrid(camOfUpt(FIRST_UPT).length);
+            const [gridSize, setGridSize] = useState(initSize);
+            const [gridSlots, setGridSlots] = useState(() => { const pool = camOfUpt(FIRST_UPT); return Array.from({ length: initSize }, (_, i) => pool[i] || null); });
+            const [isLive, setIsLive] = useState(true);
+            const [activeUpt, setActiveUpt] = useState(FIRST_UPT);
+            const [statusMap, setStatusMap] = useState({});
+            const [wall, setWall] = useState(false);
+            const [selIdx, setSelIdx] = useState(null);
+            const [modalUpt, setModalUpt] = useState(FIRST_UPT);
+            const [modalSearch, setModalSearch] = useState('');
+            const [tour, setTour] = useState(false);
+            const [idle, setIdle] = useState(false);
+
+            const setStatus = useCallback((id, s) => setStatusMap(m => m[id] === s ? m : { ...m, [id]: s }), []);
+
+            useEffect(() => {
+                const fn = () => setWall(fsElement() === document.documentElement);
+                document.addEventListener('fullscreenchange', fn);
+                document.addEventListener('webkitfullscreenchange', fn);
+                return () => { document.removeEventListener('fullscreenchange', fn); document.removeEventListener('webkitfullscreenchange', fn); };
+            }, []);
+            const toggleWall = useCallback(() => {
+                if (!fsElement()) enterFS(document.documentElement);
+                else exitFS();
+            }, []);
+
+            const openModal = (i) => { setModalUpt(activeUpt); setSelIdx(i); };
+            const closeModal = useCallback(() => { setSelIdx(null); setModalSearch(''); }, []);
+
+            useEffect(() => {
+                const fn = (e) => {
+                    if (selIdx !== null || e.ctrlKey || e.metaKey || e.altKey || /INPUT|SELECT|TEXTAREA/.test(e.target.tagName || '')) return;
+                    if (e.key === 'f' || e.key === 'F') toggleWall();
+                    if (e.key === 'p' || e.key === 'P') setIsLive(v => !v);
+                    if ((e.key === 'r' || e.key === 'R') && uptList.length > 1) setTour(v => !v);
+                };
+                document.addEventListener('keydown', fn);
+                return () => document.removeEventListener('keydown', fn);
+            }, [selIdx, toggleWall]);
+
+            useEffect(() => {
+                if (selIdx === null) return;
+                const fn = (e) => { if (e.key === 'Escape') closeModal(); };
+                document.addEventListener('keydown', fn);
+                const prev = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+                return () => { document.removeEventListener('keydown', fn); document.body.style.overflow = prev; };
+            }, [selIdx, closeModal]);
+
+            const modalCams = useMemo(() => {
+                const q = modalSearch.trim().toLowerCase();
+                return DATA.filter(c => c.grup === modalUpt && (!q || (c.nama || '').toLowerCase().includes(q)));
+            }, [modalUpt, modalSearch]);
+
+            const slotCams = gridSlots.filter(Boolean);
+            const filled = slotCams.length;
+            const nLive = slotCams.filter(c => statusMap[c.id] === 'online').length;
+            const nOff = slotCams.filter(c => statusMap[c.id] === 'offline').length;
+
+            const changeSize = (e) => {
+                const size = parseInt(e.target.value, 10);
+                setGridSize(size);
+                setGridSlots(prev => {
+                    const next = [...prev];
+                    if (size > prev.length) {
+                        for (let i = prev.length; i < size; i++) {
+                            next.push(camOfUpt(activeUpt).find(c => !next.some(s => s && s.id === c.id)) || null);
+                        }
+                    } else next.length = size;
+                    return next;
+                });
+            };
+
+            const selectUpt = useCallback((u) => {
+                setActiveUpt(u);
+                store.set('matrix.upt', u);
+                const pool = camOfUpt(u), size = fitGrid(pool.length);
+                setGridSize(size);
+                setGridSlots(Array.from({ length: size }, (_, i) => pool[i] || null));
+            }, []);
+            const changeUpt = (e) => selectUpt(e.target.value);
+
+            const activeUptRef = useRef(activeUpt);
+            useEffect(() => { activeUptRef.current = activeUpt; }, [activeUpt]);
+            const selRef = useRef(selIdx);
+            useEffect(() => { selRef.current = selIdx; }, [selIdx]);
+            useEffect(() => {
+                if (!tour || uptList.length < 2) return;
+                const iv = setInterval(() => {
+                    if (selRef.current !== null) return;
+                    const idx = uptList.indexOf(activeUptRef.current);
+                    selectUpt(uptList[(idx + 1) % uptList.length]);
+                }, 20000);
+                return () => clearInterval(iv);
+            }, [tour, selectUpt]);
+
+            useEffect(() => {
+                let t = setTimeout(() => setIdle(true), 2600);
+                const wake = () => { setIdle(false); clearTimeout(t); t = setTimeout(() => setIdle(true), 2600); };
+                window.addEventListener('mousemove', wake);
+                window.addEventListener('keydown', wake);
+                window.addEventListener('touchstart', wake);
+                return () => { clearTimeout(t); window.removeEventListener('mousemove', wake); window.removeEventListener('keydown', wake); window.removeEventListener('touchstart', wake); };
+            }, []);
+            const hideChrome = wall && idle;
+
+            const pick = (cam) => {
+                const idx = selIdx;
+                setGridSlots(prev => {
+                    const next = [...prev];
+                    const ei = next.findIndex(c => c && c.id === cam.id);
+                    if (ei !== -1) next[ei] = next[idx];
+                    next[idx] = cam;
+                    return next;
+                });
+                closeModal();
+            };
+            const clearSlot = () => {
+                const idx = selIdx;
+                setGridSlots(prev => { const n = [...prev]; n[idx] = null; return n; });
+                closeModal();
+            };
+
+            const btn = "flex items-center justify-center gap-1.5 h-8 rounded-xl font-semibold text-[12px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft";
+            const ghost = { background: 'rgba(224,226,227,0.08)', border: '1px solid rgba(224,226,227,0.16)', color: '#E0E2E3' };
+
+            return (
+                <div className="flex flex-col fade-up" style={{ height: '100dvh', cursor: hideChrome ? 'none' : undefined }}>
+                    <header className={`shrink-0 relative transition-all duration-300 ${hideChrome ? 'opacity-0 -translate-y-2 pointer-events-none' : 'opacity-100 translate-y-0'}`} style={{ background: 'linear-gradient(160deg,#0F2A47 0%,#08192B 100%)', paddingTop: 'env(safe-area-inset-top)', paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
+                        <div className="dots absolute inset-0 pointer-events-none" />
+                        <div className="goldline absolute bottom-0 inset-x-0 h-[3px]" />
+                        <div className="relative flex flex-wrap items-center gap-x-2 gap-y-2 px-2.5 sm:px-3 lg:px-4 py-2 lg:flex-nowrap lg:gap-3 lg:py-0" style={{ minHeight: '56px' }}>
+                            <div className="order-1 flex items-center gap-2 min-w-0">
+                                <a href="dashboard.php" aria-label="Kembali ke dashboard" title="Kembali ke dashboard"
+                                   className={`${btn} w-8 shrink-0 hover:bg-white/15`} style={ghost}>
+                                    <Icon name="arrowLeft" className="w-3.5 h-3.5" />
+                                </a>
+                                <span className="hidden sm:block w-px h-5 shrink-0 bg-white/15" aria-hidden="true" />
+                                <span className="flex items-center gap-2 min-w-0 text-[14px] font-bold text-imipas-platinum tracking-widest uppercase">
+                                    <Icon name="grid" className="w-4 h-4 shrink-0 text-imipas-gold" />
+                                    <span className="hidden sm:inline truncate">Matrix</span>
+                                    <span className="hidden lg:inline text-[9.5px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded-md shrink-0 bg-imipas-gold text-imipas-blue">PANTAUPAS</span>
+                                </span>
+                            </div>
+
+                            <div className="order-3 lg:order-2 w-full lg:w-auto lg:flex-1 lg:min-w-0 flex items-center gap-1.5 lg:gap-2 lg:justify-end">
+                                <span className={`hidden md:flex items-center gap-1.5 text-[11px] font-semibold pr-2.5 mr-0.5 border-r border-white/15 shrink-0 ${isLive ? 'text-emerald-400' : 'text-imipas-platinum/65'}`}>
+                                    <span className={`w-1.5 h-1.5 rounded-full ${isLive ? (nLive > 0 ? 'bg-emerald-400' : 'bg-amber-400 blink') : 'bg-white/40'}`} />
+                                    <span className="tabular-nums whitespace-nowrap">{isLive ? `${nLive}/${filled} live` : `${filled} kamera siap`}</span>
+                                    {isLive && nOff > 0 && <span className="text-rose-300 tabular-nums whitespace-nowrap">&middot; {nOff} offline</span>}
+                                </span>
+
+                                <div className="relative flex-1 min-w-0 lg:flex-none lg:w-60">
+                                    <Icon name="mapPin" className="w-3.5 h-3.5 text-imipas-gold absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                    <select value={activeUpt} onChange={changeUpt} aria-label="Tampilkan kamera per UPT" className="field field-sm appearance-none cursor-pointer truncate w-full">
+                                        {uptList.map(g => <option key={g} value={g}>{g} ({uptCounts[g] || 0})</option>)}
+                                    </select>
+                                    <Icon name="chevronDown" className="w-3 h-3 text-imipas-platinum/70 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                </div>
+
+                                <div className="relative shrink-0">
+                                    <select value={gridSize} onChange={changeSize} aria-label="Jumlah kamera per layar" className="field field-sm appearance-none cursor-pointer" style={{ width: 'auto', paddingLeft: '12px' }}>
+                                        {GRID_OPTIONS.map(n => <option key={n} value={n}>{n} per layar</option>)}
+                                    </select>
+                                    <Icon name="chevronDown" className="w-3 h-3 text-imipas-platinum/70 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                </div>
+                            </div>
+
+                            <div className="order-2 lg:order-3 ml-auto lg:ml-0 flex items-center gap-1.5 shrink-0">
+                                <button onClick={() => setTour(v => !v)} disabled={uptList.length < 2} aria-pressed={tour} title="Rotasi UPT otomatis (R)"
+                                        className={`${btn} w-8 disabled:opacity-30 disabled:cursor-not-allowed`}
+                                        style={tour
+                                            ? { background: 'rgba(238,191,99,.18)', border: '1px solid rgba(238,191,99,.6)', color: '#E7C481' }
+                                            : ghost}>
+                                    <Icon name="rotate" className={`w-3.5 h-3.5 ${tour ? 'spin-slow' : ''}`} />
+                                </button>
+
+                                <button onClick={() => setIsLive(v => !v)} disabled={filled === 0} aria-pressed={isLive} title="Putar / hentikan (P)"
+                                        className={`${btn} w-8 sm:w-auto sm:px-3.5 font-bold disabled:opacity-30 disabled:cursor-not-allowed`}
+                                        style={isLive
+                                            ? { border: '1px solid rgba(253,164,175,.55)', color: '#FDA4AF', background: 'rgba(244,63,94,.12)' }
+                                            : { background: 'linear-gradient(135deg,#D6A34C,#E3B04F)', color: '#08192B', boxShadow: '0 4px 18px rgba(238,191,99,.45)' }}>
+                                    <Icon name={isLive ? 'stop' : 'play'} className="w-3.5 h-3.5" />
+                                    <span className="hidden sm:inline">{isLive ? 'Hentikan' : 'Putar'}</span>
+                                </button>
+
+                                <button onClick={toggleWall} aria-label={wall ? "Keluar layar penuh" : "Layar penuh semua kamera"} title="Layar penuh (F)" className={`${btn} w-8 hover:bg-white/15`} style={ghost}>
+                                    <Icon name={wall ? "minimize" : "maximize"} className="w-3.5 h-3.5" />
+                                </button>
+
+                                <LiveClock className="hidden md:block text-[11px] font-medium pl-2.5 ml-0.5 border-l border-white/15 text-imipas-platinum/80" />
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="relative flex-1 min-h-0 overflow-y-auto lg:overflow-hidden p-2 sm:p-3 lg:p-4" style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}>
+                        <div className={`grid ${GRID_CLASS[gridSize]} gap-2 sm:gap-2.5 lg:gap-3 w-full lg:h-full`}>
+                            {gridSlots.map((cam, i) => (
+                                <div key={i} className="w-full aspect-video lg:aspect-auto lg:h-full min-h-0 min-w-0 overflow-hidden rounded-xl bg-imipas-blue ring-1 ring-black/50">
+                                    {cam
+                                        ? <MatrixPlayer key={cam.id} camera={cam} slotNumber={i + 1} isLive={isLive} showGrup={cam.grup !== activeUpt} startDelay={i * 220} onChangeClick={() => openModal(i)} onStatus={setStatus} />
+                                        : <EmptySlot slotNumber={i + 1} onClick={() => openModal(i)} />}
+                                </div>
+                            ))}
+                        </div>
+                    </main>
+
+                    <Watermark hidden={hideChrome} />
+
+                    {selIdx !== null && (
+                        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6 backdrop-blur-sm" style={{ background: 'rgba(7,33,61,.78)' }} role="dialog" aria-modal="true" aria-label="Pilih kamera" onClick={closeModal}>
+                            <div onClick={e => e.stopPropagation()} className="fade-up relative w-full max-w-lg overflow-hidden flex flex-col rounded-t-2xl sm:rounded-2xl border border-imipas-blue/10 shadow-2xl text-imipas-blue" style={{ maxHeight: '88dvh', paddingBottom: 'env(safe-area-inset-bottom)', background: '#F1F2F3' }}>
+                                <div className="goldline absolute top-0 inset-x-0 h-[3px] z-10" />
+                                <div className="relative flex items-center justify-between gap-3 px-5 py-3.5 shrink-0" style={{ background: 'linear-gradient(160deg,#0F2A47 0%,#08192B 100%)' }}>
+                                    <div className="dots absolute inset-0 pointer-events-none" />
+                                    <div className="relative">
+                                        <h3 className="text-[14px] font-bold text-imipas-platinum tracking-wider uppercase flex items-center gap-2"><Icon name="camera" className="w-4 h-4 text-imipas-gold" />Pilih Kamera</h3>
+                                        <p className="text-[12px] mt-0.5" style={{ color: 'rgba(224,226,227,.8)' }}>Untuk slot {String(selIdx + 1).padStart(2, '0')}</p>
+                                    </div>
+                                    <button onClick={closeModal} aria-label="Tutup" className="relative w-9 h-9 flex items-center justify-center rounded-lg text-white/75 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft"><Icon name="x" /></button>
+                                </div>
+
+                                <div className="px-5 py-3.5 grid grid-cols-1 sm:grid-cols-2 gap-2.5 shrink-0 border-b border-imipas-blue/10">
+                                    <div className="relative">
+                                        <Icon name="search" className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                        <input type="text" value={modalSearch} onChange={e => setModalSearch(e.target.value)} placeholder="Cari kamera" aria-label="Cari kamera" className="field" />
+                                    </div>
+                                    <div className="relative">
+                                        <Icon name="mapPin" className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                        <select value={modalUpt} onChange={e => setModalUpt(e.target.value)} aria-label="Pilih UPT" className="field appearance-none cursor-pointer" style={{ paddingRight: '36px', fontWeight: 600 }}>
+                                            {uptList.map(g => <option key={g} value={g}>{g}</option>)}
+                                        </select>
+                                        <Icon name="chevronDown" className="w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                    </div>
+                                </div>
+
+                                <div className="flex-1 overflow-y-auto overscroll-contain p-4 space-y-1.5">
+                                    {modalCams.length === 0 ? (
+                                        <div className="py-12 text-center font-semibold text-[13px]" style={{ color: 'rgba(7,33,61,.7)' }}>Kamera tidak ditemukan.</div>
+                                    ) : modalCams.map(cam => {
+                                        const used = gridSlots.findIndex(s => s && s.id === cam.id);
+                                        const here = used === selIdx, elsewhere = used !== -1 && !here;
+                                        return (
+                                            <button key={cam.id} onClick={() => pick(cam)}
+                                                    className={`w-full flex items-center justify-between gap-3 p-3 rounded-xl text-left border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-gold ${here ? 'bg-imipas-gold/20 border-imipas-gold' : 'bg-white border-imipas-blue/10 hover:bg-imipas-gold/10 hover:border-imipas-gold/60'}`}>
+                                                <div className="flex flex-col min-w-0">
+                                                    <span className="font-semibold text-[13.5px] text-imipas-blue truncate">{cam.nama}</span>
+                                                    <span className="text-[11.5px] font-medium flex items-center gap-1.5 truncate mt-0.5" style={{ color: 'rgba(7,33,61,.65)' }}><Icon name="mapPin" className="w-3 h-3 shrink-0" />{cam.grup}</span>
+                                                </div>
+                                                {here ? <span className="text-[10.5px] px-2.5 py-1.5 rounded-lg font-semibold shrink-0 bg-imipas-blue text-imipas-gold">Slot ini</span>
+                                                 : elsewhere ? <span className="text-[10.5px] px-2.5 py-1.5 rounded-lg font-semibold shrink-0 bg-imipas-blue/5 border border-imipas-blue/15" style={{ color: 'rgba(7,33,61,.75)' }}>Tukar slot {String(used + 1).padStart(2, '0')}</span>
+                                                 : <span className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-imipas-blue/5" style={{ color: 'rgba(7,33,61,.6)' }}><Icon name="plus" /></span>}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+
+                                {gridSlots[selIdx] && (
+                                    <div className="px-5 py-3.5 border-t border-imipas-blue/10 shrink-0">
+                                        <button onClick={clearSlot} className="w-full py-2.5 rounded-xl text-[13px] font-semibold bg-white border hover:bg-imipas-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-gold" style={{ borderColor: 'rgba(7,33,61,.2)', color: 'rgba(7,33,61,.8)' }}>Kosongkan slot ini</button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>

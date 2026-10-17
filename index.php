@@ -1,0 +1,291 @@
+<?php
+// ---------- Sesi & header keamanan ----------
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path'     => '/',
+    'secure'   => $isHttps,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+session_start();
+
+header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: no-store');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: same-origin');
+
+if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in'] === true) {
+    header('Location: dashboard.php');
+    exit;
+}
+
+// ---------- Konfigurasi akun ----------
+// Kata sandi disimpan sebagai hash bcrypt, bukan teks polos.
+// Hash di bawah ini untuk kata sandi lama (admin12345). SEGERA GANTI: jalankan di terminal
+//   php -r 'echo password_hash("SANDI_BARU", PASSWORD_DEFAULT), "\n";'
+// lalu tempel hasilnya ke ADMIN_PASS_HASH.
+const ADMIN_USER      = 'adminkanwil';
+const ADMIN_PASS_HASH = '$2y$12$7ita4L9kNK76Q3bDd5fdQOqUxKYQDCMzS1kXgr/4OifA7AftMokgu';
+const MAX_TRIES       = 5;     // percobaan gagal sebelum dikunci
+const LOCK_SECONDS    = 300;   // lama penguncian (detik)
+
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+
+$error    = '';
+$username = '';
+$locked   = max(0, (int)($_SESSION['lock_until'] ?? 0) - time());
+
+// ---------- Proses login ----------
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = substr(trim((string)($_POST['username'] ?? '')), 0, 64);
+    $password = (string)($_POST['password'] ?? '');
+
+    if ($locked > 0) {
+        // Sedang terkunci: jangan proses kredensial. Banner hitung-mundur di bawah yang menjelaskan.
+    } elseif (!hash_equals($_SESSION['csrf'], (string)($_POST['csrf'] ?? ''))) {
+        $error = 'Sesi formulir kedaluwarsa. Muat ulang halaman lalu coba lagi.';
+    } else {
+        // Kedua pemeriksaan selalu dijalankan agar waktu respons tidak membocorkan ID yang benar
+        $okUser = hash_equals(ADMIN_USER, $username);
+        $okPass = password_verify(substr($password, 0, 256), ADMIN_PASS_HASH);
+
+        if ($okUser && $okPass) {
+            session_regenerate_id(true);
+            unset($_SESSION['tries'], $_SESSION['lock_until']);
+            $_SESSION['csrf'] = bin2hex(random_bytes(32));
+            $_SESSION['is_logged_in'] = true;
+            header('Location: dashboard.php');
+            exit;
+        }
+
+        usleep(300000); // perlambat tebakan otomatis
+        $_SESSION['tries'] = (int)($_SESSION['tries'] ?? 0) + 1;
+        if ($_SESSION['tries'] >= MAX_TRIES) {
+            $_SESSION['tries']      = 0;
+            $_SESSION['lock_until'] = time() + LOCK_SECONDS;
+        } else {
+            $error = 'ID Pengguna atau Kata Sandi tidak valid. Sisa percobaan: ' . (MAX_TRIES - $_SESSION['tries']) . '.';
+        }
+    }
+}
+
+// Nilai akhir untuk ditampilkan (dihitung ulang agar mencerminkan lockout yang baru terjadi)
+$locked = max(0, (int)($_SESSION['lock_until'] ?? 0) - time());
+if ($locked === 0 && isset($_SESSION['lock_until'])) {
+    unset($_SESSION['lock_until']);
+}
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Login &mdash; PANTAUPAS Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: { sans: ['"Titillium Web"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'] },
+                colors: { imipas: { blue: '#08192B', blue2: '#0F2A47', blue3: '#163B5E', gold: '#D6A34C', goldSoft: '#E7C481', platinum: '#E0E2E3' } }
+            } }
+        }
+    </script>
+    <style>
+        html, body { min-height: 100%; }
+        body {
+            background-color: #E0E2E3;
+            background-image:
+                radial-gradient(ellipse 80% 55% at 50% 0%, rgba(8,25,43,.16) 0%, transparent 70%),
+                radial-gradient(rgba(8,25,43,.07) 1px, transparent 1px);
+            background-size: 100% 100%, 24px 24px;
+            padding-top: max(1rem, env(safe-area-inset-top));
+            padding-bottom: max(1rem, env(safe-area-inset-bottom));
+            padding-left: max(1rem, env(safe-area-inset-left));
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        .fade-up { animation: fadeUp .45s ease-out both; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spin-slow { animation: spin .9s linear infinite; }
+        @media (prefers-reduced-motion: reduce) { .fade-up, .spin-slow { animation: none; } }
+
+        .field {
+            width: 100%; background: #fff; border: 1px solid rgba(8,25,43,.2);
+            border-radius: 10px; padding: 11px 12px 11px 40px; color: #08192B; font-size: 14px; font-weight: 500;
+            font-family: 'Titillium Web', sans-serif; outline: none; transition: border-color .2s, background .2s, box-shadow .2s;
+        }
+        .field::placeholder { color: rgba(8,25,43,.4); }
+        .field:focus { border-color: #08192B; box-shadow: 0 0 0 3px rgba(214,163,76,.55); }
+        .field:disabled { opacity: .5; cursor: not-allowed; background: rgba(255,255,255,.6); }
+        input:-webkit-autofill, input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 100px #fff inset !important; -webkit-text-fill-color: #08192B !important; caret-color: #08192B;
+        }
+        .dots { background-image: radial-gradient(rgba(224,226,227,.1) 1px, transparent 1px); background-size: 18px 18px; }
+    </style>
+</head>
+<body class="font-sans antialiased flex items-center justify-center text-imipas-blue" style="min-height:100dvh;">
+    <main class="w-full max-w-[880px] fade-up">
+        <div class="grid lg:grid-cols-[1.05fr_1fr] rounded-2xl overflow-hidden border border-imipas-blue/10 shadow-xl" style="background:#F1F2F3;">
+            <section class="hidden lg:flex flex-col justify-between relative p-9 overflow-hidden" style="background:linear-gradient(160deg,#0F2A47 0%,#08192B 100%);">
+                <div class="dots absolute inset-0 pointer-events-none"></div>
+                <div class="absolute top-0 inset-x-0 h-[3px]" style="background:linear-gradient(90deg,transparent,#D6A34C 30%,#E7C481 50%,#D6A34C 70%,transparent);"></div>
+                <div class="relative">
+                    <img src="logo-kanwil.png" alt="Logo Kanwil Ditjen PAS" class="h-14 w-auto object-contain mb-6" onerror="this.style.display='none'">
+                    <h1 class="text-[22px] font-bold tracking-widest uppercase text-imipas-platinum">PANTAUPAS</h1>
+                    <p class="text-[11.5px] font-semibold mt-1.5 tracking-wider uppercase" style="color:#D6A34C;">Command Center &middot; Kanwil Ditjenpas Kalimantan Selatan</p>
+                    <p class="text-[13px] leading-relaxed mt-5" style="color:rgba(224,226,227,.8);">
+                        Sistem pengawasan terpadu siaran langsung CCTV seluruh UPT di lingkungan Kantor Wilayah Ditjen Pemasyarakatan Kalimantan Selatan.
+                    </p>
+                </div>
+                <div class="relative mt-8">
+                    <p class="text-[13px] leading-relaxed" style="color:rgba(224,226,227,.8);">Sistem arsitektur pemantauan ini diinisiasi oleh Bapak Sugito dan Tim Perencanaan dan Reformasi Birokrasi Kantor Wilayah serta pengembangannya berkolaborasi dengan mahasiswa Teknik Informatika Politeknik Negeri Banjarmasin:</p>
+                    <ul class="mt-3 space-y-1.5 list-disc list-inside text-[12px] font-semibold marker:text-imipas-gold" style="color:rgba(224,226,227,.9);">
+                        <li>SUGITO, A.Md.IP, S.Sos, M.A.</li>
+                        <li>Krisna Aji Pambudi, S.T.</li>
+                        <li>Mochamad Sonny Wicaksono</li>
+                        <li>Ridho Drajat</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="relative p-7 sm:p-9">
+                <div class="lg:hidden relative text-center -mx-7 -mt-7 sm:-mx-9 sm:-mt-9 mb-6 px-7 sm:px-9 pt-7 sm:pt-8 pb-5 overflow-hidden" style="background:linear-gradient(160deg,#0F2A47 0%,#08192B 100%);">
+                    <div class="dots absolute inset-0 pointer-events-none"></div>
+                    <div class="absolute top-0 inset-x-0 h-[3px]" style="background:linear-gradient(90deg,transparent,#D6A34C 30%,#E7C481 50%,#D6A34C 70%,transparent);"></div>
+                    <div class="relative">
+                        <img src="logo-kanwil.png" alt="Logo" class="h-12 w-auto mx-auto mb-3 object-contain" onerror="this.style.display='none'">
+                        <h1 class="text-[17px] font-bold tracking-widest uppercase text-imipas-platinum">PANTAUPAS</h1>
+                        <p class="text-[11px] font-semibold mt-1 tracking-wider uppercase" style="color:#D6A34C;">Command Center &middot; Kalsel</p>
+                    </div>
+                </div>
+
+                <h2 class="hidden lg:block text-[18px] font-bold text-imipas-blue">Masuk ke sistem</h2>
+                <p class="hidden lg:block text-[12.5px] mt-1 mb-6" style="color:rgba(8,25,43,.65);">Gunakan ID pengguna dan kata sandi yang diberikan Kanwil.</p>
+
+                <?php if ($locked > 0): ?>
+                    <div id="lockoutNotice" role="alert" aria-live="assertive" class="flex items-start gap-2.5 mb-5 px-3.5 py-3 rounded-xl border" style="background:rgba(225,29,72,.07);border-color:rgba(225,29,72,.28);">
+                        <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#BE123C;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="text-[13px] font-medium" style="color:#BE123C;">
+                            Terlalu banyak percobaan gagal. Coba lagi dalam
+                            <strong id="lockCountdown" class="font-mono tabular-nums"><?php echo sprintf('%02d:%02d', intdiv($locked, 60), $locked % 60); ?></strong>.
+                        </span>
+                    </div>
+                <?php elseif ($error !== ''): ?>
+                    <div role="alert" aria-live="assertive" class="flex items-start gap-2.5 mb-5 px-3.5 py-3 rounded-xl border" style="background:rgba(225,29,72,.07);border-color:rgba(225,29,72,.28);">
+                        <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:#BE123C;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                        <span class="text-[13px] font-medium" style="color:#BE123C;"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></span>
+                    </div>
+                <?php endif; ?>
+
+                <form id="loginForm" action="" method="POST" class="space-y-4" novalidate>
+                    <input type="hidden" name="csrf" value="<?php echo htmlspecialchars($_SESSION['csrf'], ENT_QUOTES, 'UTF-8'); ?>">
+
+                    <div>
+                        <label for="username" class="block text-[11.5px] font-semibold mb-1.5 tracking-wider uppercase" style="color:rgba(8,25,43,.75);">ID Pengguna</label>
+                        <div class="relative">
+                            <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:rgba(8,25,43,.45);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                            <input type="text" id="username" name="username" required maxlength="64" autocomplete="username" autocapitalize="none" spellcheck="false"
+                                   placeholder="Masukkan ID Anda" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>"
+                                   class="field" <?php echo $locked > 0 ? 'disabled' : ''; ?>>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-[11.5px] font-semibold mb-1.5 tracking-wider uppercase" style="color:rgba(8,25,43,.75);">Kata Sandi</label>
+                        <div class="relative">
+                            <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color:rgba(8,25,43,.45);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                            <input type="password" id="password" name="password" required maxlength="256" autocomplete="current-password"
+                                   placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" class="field" style="padding-right:44px;" <?php echo $locked > 0 ? 'disabled' : ''; ?>>
+                            <button type="button" id="togglePw" aria-label="Tampilkan kata sandi" aria-pressed="false"
+                                    class="absolute inset-y-0 right-0 px-3.5 flex items-center focus:outline-none focus-visible:text-imipas-blue hover:text-imipas-blue transition-colors" style="color:rgba(8,25,43,.55);">
+                                <svg id="eyeOff" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
+                                <svg id="eyeOn" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" <?php echo $locked > 0 ? 'disabled' : ''; ?>
+                            class="w-full flex items-center justify-center gap-2 font-bold text-[14px] py-3 rounded-xl mt-1 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-blue disabled:opacity-50 disabled:cursor-not-allowed hover:brightness-105"
+                            style="background:linear-gradient(135deg,#D6A34C,#E7C481);color:#08192B;box-shadow:0 4px 18px rgba(214,163,76,.45);">
+                        <span id="btnText"><?php echo $locked > 0 ? 'Akun Terkunci Sementara' : 'Masuk Sistem'; ?></span>
+                        <svg id="btnArrow" class="w-4 h-4 <?php echo $locked > 0 ? 'hidden' : ''; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        <span id="btnSpin" class="hidden w-4 h-4 rounded-full border-2 border-imipas-blue/30 border-t-imipas-blue spin-slow"></span>
+                    </button>
+                </form>
+                <p class="mt-6 pt-4 border-t text-center text-[11.5px] leading-relaxed" style="border-color:rgba(8,25,43,.1);color:rgba(8,25,43,.6);">Hanya digunakan untuk kepentingan internal Kanwil Ditjen PAS Kalsel</p>
+            </section>
+        </div>
+        <p class="text-center mt-4 text-[11px]" style="color:rgba(8,25,43,.6);">PANTAUPAS &copy; <?php echo date('Y'); ?> &middot; Tim Perencanaan dan RB Kanwil Ditjen PAS Kalsel X POLIBAN</p>
+    </main>
+    <script>
+        (function () {
+            var pw = document.getElementById('password'),
+                user = document.getElementById('username'),
+                btn = document.getElementById('togglePw'),
+                eyeOff = document.getElementById('eyeOff'),
+                eyeOn = document.getElementById('eyeOn'),
+                form = document.getElementById('loginForm'),
+                submitBtn = document.getElementById('submitBtn'),
+                btnText = document.getElementById('btnText'),
+                btnArrow = document.getElementById('btnArrow'),
+                btnSpin = document.getElementById('btnSpin');
+
+            btn.addEventListener('click', function () {
+                var show = pw.type === 'password';
+                pw.type = show ? 'text' : 'password';
+                eyeOff.classList.toggle('hidden', show);
+                eyeOn.classList.toggle('hidden', !show);
+                btn.setAttribute('aria-pressed', show ? 'true' : 'false');
+                btn.setAttribute('aria-label', show ? 'Sembunyikan kata sandi' : 'Tampilkan kata sandi');
+            });
+
+            form.addEventListener('submit', function (e) {
+                if (submitBtn.disabled) { e.preventDefault(); return; }
+                if (!user.value.trim() || !pw.value) {
+                    e.preventDefault();
+                    (user.value.trim() ? pw : user).focus();
+                    return;
+                }
+                btnText.textContent = 'Memeriksa\u2026';
+                btnArrow.classList.add('hidden');
+                btnSpin.classList.remove('hidden');
+                setTimeout(function () { submitBtn.disabled = true; }, 0);
+            });
+
+            // Tombol Kembali di browser: pulihkan tombol yang sempat terkunci pada status "Memeriksa"
+            window.addEventListener('pageshow', function (ev) {
+                if (ev.persisted) { location.reload(); }
+            });
+
+            if (!user.disabled) (user.value ? pw : user).focus();
+
+            // Hitung mundur lockout: setelah habis, halaman dimuat ulang agar form aktif
+            // kembali dan token CSRF tetap sinkron dengan sesi server.
+            var lockedSeconds = <?php echo (int) $locked; ?>;
+            if (lockedSeconds > 0) {
+                var countdownEl = document.getElementById('lockCountdown');
+                var iv = setInterval(function () {
+                    lockedSeconds--;
+                    if (lockedSeconds <= 0) {
+                        clearInterval(iv);
+                        location.reload();
+                        return;
+                    }
+                    if (countdownEl) {
+                        var m = Math.floor(lockedSeconds / 60), s = lockedSeconds % 60;
+                        countdownEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+                    }
+                }, 1000);
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1515 @@
+2026/10/12 12:20:30 INF MediaMTX v1.21.0, windows, amd64
+2026/10/12 12:20:30 INF configuration loaded from C:\laragon\www\CCTV\Server\mediamtx.yml
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_amuntai1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari9] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari12] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau16] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau15] [RTSP source] started
+2026/10/12 12:20:30 INF [RTSP] started with listeners on :8554 (TCP/RTSP)
+2026/10/12 12:20:30 INF [path kamera_marabahan6] [RTSP source] started
+2026/10/12 12:20:30 INF [HLS] started with listener on :8888 (TCP/HTTP)
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau14] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari10] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari14] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau13] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan10] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari15] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau10] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau9] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan3] [RTSP source] started
+2026/10/12 12:20:30 INF [WebRTC] started with listeners on :8889 (TCP/HTTP), :8189 (UDP/ICE)
+2026/10/12 12:20:30 INF [path kamera_pelaihari5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan9] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau11] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura10] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan1] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari11] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar10] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari13] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari16] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau12] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura9] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lppmartapura2] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lpkamartapura8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_marabahan7] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari8] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar4] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_pelaihari3] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau5] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_lapasbanjar9] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_rantau6] [RTSP source] started
+2026/10/12 12:20:30 INF [path kamera_banjar2] stream is available and online, 2 tracks (H264, G711)
+2026/10/12 12:20:30 INF [path kamera_banjar] stream is available and online, 2 tracks (H264, G711)
+2026/10/12 12:20:31 INF [path kamera_banjar3] stream is available and online, 2 tracks (H264, G711)
+2026/10/12 12:20:31 INF [path kamera_banjar5] stream is available and online, 2 tracks (H264, G711)
+2026/10/12 12:20:31 INF [path kamera_banjar6] stream is available and online, 1 track (H264)
+2026/10/12 12:20:31 INF [path kamera_banjar4] stream is available and online, 2 tracks (H264, G711)
+2026/10/12 12:20:31 INF [path kamera_banjar8] stream is available and online, 1 track (H264)
+2026/10/12 12:20:31 INF [path kamera_banjar7] stream is available and online, 1 track (H264)
+2026/10/12 12:20:50 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:20:50 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:21:15 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:21:40 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:05 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:30 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:22:55 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:20 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:23:45 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:10 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:24:35 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:00 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:25 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:25:50 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:15 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:26:40 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:05 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:27:30 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan3] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari7] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura4] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan8] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura1] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan6] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar1] [RTSP source] dial tcp 192.168.1.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura2] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau10] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar8] [RTSP source] dial tcp 192.168.1.102:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari11] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari13] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau1] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau2] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari1] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura6] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura1] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar2] [RTSP source] dial tcp 192.168.1.108:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura7] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari10] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau8] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau11] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura3] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau14] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura10] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura6] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura2] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan4] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau15] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar10] [RTSP source] dial tcp 192.168.1.106:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari6] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura7] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari9] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau12] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar3] [RTSP source] dial tcp 192.168.1.117:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar5] [RTSP source] dial tcp 192.168.1.113:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau4] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau9] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar4] [RTSP source] dial tcp 192.168.1.112:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari12] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari3] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura5] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura3] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura5] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari14] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan5] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau16] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari8] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari2] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau6] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau3] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura9] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau7] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura8] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar6] [RTSP source] dial tcp 192.168.1.114:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau5] [RTSP source] dial tcp 192.168.0.103:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan2] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari4] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari16] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lpkamartapura8] [RTSP source] dial tcp 192.168.100.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_amuntai1] [RTSP source] dial tcp 192.168.1.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar9] [RTSP source] dial tcp 192.168.1.105:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lppmartapura4] [RTSP source] dial tcp 192.168.1.3:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan10] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan1] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan9] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_rantau13] [RTSP source] dial tcp 192.168.0.2:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_lapasbanjar7] [RTSP source] dial tcp 192.168.1.101:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_marabahan7] [RTSP source] dial tcp 100.97.15.72:8554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari5] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/12 12:27:55 ERR [path kamera_pelaihari15] [RTSP source] dial tcp 192.168.0.107:554: i/o timeout
+2026/10/15 15:28:20 INF MediaMTX v1.21.0, windows, amd64
+2026/10/15 15:28:20 INF configuration loaded from C:\laragon\www\CCTV\Server\mediamtx.yml
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung13] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lpkamartapura3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau11] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lpkamartapura1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung14] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari14] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar14] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau16] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung15] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung16] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung17] [RTSP source] started
+2026/10/15 15:28:20 INF [RTSP] started with listeners on :8555 (TCP/RTSP)
+2026/10/15 15:28:20 INF [path kamera_pelaihari4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau12] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau14] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari16] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau13] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lpkamartapura4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari13] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung19] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar13] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung11] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung12] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar12] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari15] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lpkamartapura2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung18] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung20] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar10] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin7] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar5] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari11] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lppmartapura3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung6] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung9] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_barabai2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutanrantau15] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin2] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbatulicin4] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_marabahan8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_rutantanjung8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_pelaihari12] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar8] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_lapasbanjar11] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjar3] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_amuntai1] [RTSP source] started
+2026/10/15 15:28:20 INF [path kamera_banjarbaru5] [RTSP source] started
+2026/10/15 15:28:20 INF [HLS] started with listener on :8888 (TCP/HTTP)
+2026/10/15 15:28:20 INF [WebRTC] started with listeners on :8889 (TCP/HTTP), :8189 (UDP/ICE)
+2026/10/15 15:28:20 INF [path kamera_banjar7] stream is available and online, 1 track (H264)
+2026/10/15 15:28:20 INF [path kamera_banjar6] stream is available and online, 1 track (H264)
+2026/10/15 15:28:20 INF [path kamera_banjar] stream is available and online, 2 tracks (H264, G711)
+2026/10/15 15:28:20 INF [path kamera_banjar5] stream is available and online, 2 tracks (H264, G711)
+2026/10/15 15:28:20 INF [path kamera_banjar4] stream is available and online, 2 tracks (H264, G711)
+2026/10/15 15:28:20 INF [path kamera_banjar8] stream is available and online, 1 track (H264)
+2026/10/15 15:28:20 INF [path kamera_banjar3] stream is available and online, 2 tracks (H264, G711)
+2026/10/15 15:28:20 INF [path kamera_banjar2] stream is available and online, 2 tracks (H264, G711)

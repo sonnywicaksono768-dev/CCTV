@@ -1,0 +1,696 @@
+<?php
+session_start();
+if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
+    header("Location: index.php");
+    exit;
+}
+header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: no-store');
+header('X-Frame-Options: DENY');
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: same-origin');
+$dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>PANTAUPAS KALSEL &mdash; Command Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: { sans: ['"Titillium Web"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'] },
+                // Palet resmi (sama dengan halaman login): Midnight Blue #08192B, Gold Dignity #D6A34C, Platinum #E0E2E3
+                colors: { imipas: { blue: '#08192B', blue2: '#0F2A47', blue3: '#163B5E', gold: '#D6A34C', goldSoft: '#E7C481', platinum: '#E0E2E3' } }
+            } }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+
+    <!-- Satu-satunya sumber data kamera: tambah/ubah kamera cukup di file ini -->
+    <script src="data_kamera.js?v=<?php echo (int) $dataVer; ?>"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+
+    <style>
+        html, body { height: 100%; margin: 0; }
+        #root { height: 100%; }
+        body {
+            background-color: #E0E2E3;
+            background-image: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(7,33,61,.12) 0%, transparent 70%), radial-gradient(rgba(7,33,61,.06) 1px, transparent 1px);
+            background-size: 100% 100%, 24px 24px;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(7,33,61,.28); border-radius: 4px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spin-slow { animation: spin .9s linear infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+        .blink { animation: blink 1.2s ease-in-out infinite; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        .fade-up { animation: fadeUp .45s ease-out both; }
+        @keyframes sheetUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+        .sheet-open { animation: sheetUp .28s ease-out both; }
+        .tabular-nums { font-variant-numeric: tabular-nums; }
+        kbd { font-size: 9.5px; padding: 0 3px; border-radius: 3px; background: rgba(7,33,61,.08); border: 1px solid rgba(7,33,61,.12); }
+        .stripe { background-image: repeating-linear-gradient(135deg, #0F2A47 0 14px, #08192B 14px 28px); }
+        .dots { background-image: radial-gradient(rgba(224,226,227,.1) 1px, transparent 1px); background-size: 18px 18px; }
+        .dots-dark { background-image: radial-gradient(rgba(7,33,61,.14) 1px, transparent 1px); background-size: 12px 12px; }
+        .goldline { background: linear-gradient(90deg, transparent, #D6A34C 30%, #E7C481 50%, #D6A34C 70%, transparent); }
+        select { background-image: none !important; }
+        select option { background: #fff; color: #08192B; }
+
+        /* Kolom isian: gaya yang sama dengan halaman login (putih, bingkai biru tipis, ring fokus emas) */
+        .field {
+            width: 100%; background: #fff; border: 1px solid rgba(7,33,61,.2);
+            border-radius: 10px; padding: 9px 12px 9px 36px; color: #08192B; font-size: 13px; font-weight: 500;
+            font-family: 'Titillium Web', sans-serif; outline: none; transition: border-color .2s, box-shadow .2s;
+        }
+        .field::placeholder { color: rgba(7,33,61,.5); }
+        .field:focus { border-color: #08192B; box-shadow: 0 0 0 3px rgba(238,191,99,.55); }
+        @media (max-width: 640px) {
+            .field { padding: 7px 8px 7px 30px; font-size: 12.5px; border-radius: 8px; }
+        }
+        .ctl { opacity: 1; transition: opacity .2s; }
+        @media (hover: hover) and (pointer: fine) {
+            .ctl { opacity: 0; }
+            .grp:hover .ctl, .ctl:focus-within { opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) { .spin-slow, .blink, .animate-pulse, .fade-up, .sheet-open { animation: none; } }
+    </style>
+</head>
+<body class="font-sans text-imipas-blue antialiased overflow-hidden selection:bg-imipas-gold selection:text-imipas-blue" style="height:100dvh;">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef, useMemo, useCallback } = React;
+
+        // Data dari data_kamera.js (dengan pengaman bila file gagal dimuat)
+        const CCTV = (typeof INITIAL_CCTV_DATA !== 'undefined' && Array.isArray(INITIAL_CCTV_DATA)) ? INITIAL_CCTV_DATA : [];
+        const ALL = (typeof ALL_UPT !== 'undefined') ? ALL_UPT : 'Semua UPT';
+        const GROUPS = (typeof GROUP_LIST !== 'undefined' && Array.isArray(GROUP_LIST)) ? GROUP_LIST : [];
+
+        // Warna status disesuaikan agar terbaca di latar terang (daftar kamera)
+        const ST = {
+            online:     { dot: 'bg-emerald-500',     txt: 'Live',        c: '#059669' },
+            offline:    { dot: 'bg-rose-600',        txt: 'Offline',     c: '#E11D48' },
+            connecting: { dot: 'bg-amber-500 blink', txt: 'Menghubung',  c: '#B7791F' },
+            checking:   { dot: 'bg-slate-400',       txt: 'Belum dicek', c: '#64748B' }
+        };
+        const CHIPS = [['all', 'Semua'], ['online', 'Live'], ['offline', 'Offline']];
+
+        const P = {
+            mapPin: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
+            search: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+            camera: "M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9zM15 13a3 3 0 11-6 0 3 3 0 016 0z",
+            x: "M6 18L18 6M6 6l12 12",
+            volume: "M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z",
+            volumeX: "M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2",
+            chevronDown: "M19 9l-7 7-7-7",
+            chevLeft: "M15 19l-7-7 7-7",
+            chevRight: "M9 5l7 7-7 7",
+            chevUp: "M5 15l7-7 7 7",
+            list: "M4 6h16M4 12h16M4 18h16",
+            logout: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1",
+            maximize: "M4 8V4h4M4 4l5 5M20 8V4h-4M20 4l-5 5M4 16v4h4M4 20l5-5M20 16v4h-4M20 20l-5-5",
+            minimize: "M9 3v4H5M9 7L4 2M15 3v4h4M15 7l5-5M9 21v-4H5M9 17l-5 5M15 21v-4h4M15 17l5 5",
+            refresh: "M4 4v5h5M20 20v-5h-5M5.6 15A8 8 0 0018.4 17M18.4 9A8 8 0 005.6 7",
+            info: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+            grid: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
+            shield: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+        };
+        const Icon = ({ name, className = "w-4 h-4", style }) => (
+            <svg className={className} style={style} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={P[name] || P.camera} />
+            </svg>
+        );
+
+        const LiveClock = ({ className = "" }) => {
+            const [now, setNow] = useState(new Date());
+            useEffect(() => { const t = setInterval(() => setNow(new Date()), 1000); return () => clearInterval(t); }, []);
+            const p = (n) => String(n).padStart(2, "0");
+            const d = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'][now.getDay()];
+            return <span className={`font-mono tabular-nums ${className}`}>{d}, {p(now.getDate())}/{p(now.getMonth()+1)}/{now.getFullYear()}&nbsp;&nbsp;{p(now.getHours())}:{p(now.getMinutes())}:{p(now.getSeconds())}</span>;
+        };
+
+        const withVer = (url, v) => url + (url.indexOf('?') >= 0 ? '&' : '?') + 'v=' + v;
+
+        const hudBtn = "w-8 h-8 rounded-lg bg-imipas-blue/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-white/90 hover:text-imipas-gold hover:border-imipas-gold/70 hover:bg-imipas-blue transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft";
+
+        /* ---------- PLAYER ---------- */
+        const CctvPlayer = ({ camera, reloadKey, onStatus, muted, onMute }) => {
+            const box = useRef(null), vid = useRef(null);
+            const [status, setStatus] = useState('connecting');
+            const [fs, setFs] = useState(false);
+            const [retry, setRetry] = useState(0);
+            const cb = useRef(onStatus);
+            useEffect(() => { cb.current = onStatus; }, [onStatus]);
+
+            useEffect(() => { if (vid.current) vid.current.muted = muted; }, [muted]);
+
+            useEffect(() => {
+                const v = vid.current;
+                let hls = null, retryTimer = null, off = null, playWatch = null, stallWatch = null;
+                let lastFrag = Date.now(), recoveries = 0;
+
+                // Hanya status akhir (online/offline) yang dilaporkan ke daftar kamera.
+                // "Menghubungkan" bersifat lokal agar kamera yang ditonton tidak hilang dari daftar saat filter aktif.
+                const apply = (s) => { setStatus(s); if (cb.current) cb.current(camera.id, s); };
+                const again = () => { clearTimeout(retryTimer); retryTimer = setTimeout(() => setRetry(k => k + 1), 3000); };
+                const fail = () => { apply('offline'); if (hls) { hls.destroy(); hls = null; } again(); };
+
+                setStatus('connecting');
+                if (!v || !camera.streamUrl) { apply('offline'); return; }
+
+                playWatch = setInterval(() => {
+                    if (document.fullscreenElement) return;
+                    if (v.paused && (v.readyState >= 2 || v.buffered.length)) v.play().catch(() => {});
+                }, 1500);
+
+                if (window.Hls && Hls.isSupported()) {
+                    let netErr = 0;
+                    hls = new Hls({
+                        enableWorker: true,
+                        lowLatencyMode: true,
+                        liveSyncDurationCount: 2,
+                        liveMaxLatencyDurationCount: 4,
+                        maxBufferLength: 4,
+                        maxMaxBufferLength: 6,
+                        backBufferLength: 0,
+                        manifestLoadingTimeOut: 5000,
+                        manifestLoadingMaxRetry: 3,
+                        levelLoadingTimeOut: 5000,
+                        levelLoadingMaxRetry: 3,
+                        fragLoadingTimeOut: 5000,
+                        fragLoadingMaxRetry: 4
+                    });
+                    hls.on(Hls.Events.MEDIA_ATTACHED, () => { if (hls) hls.loadSource(camera.streamUrl); });
+                    hls.on(Hls.Events.MANIFEST_PARSED, () => { v.play().catch(() => {}); });
+                    hls.on(Hls.Events.FRAG_LOADED, () => { lastFrag = Date.now(); recoveries = 0; netErr = 0; apply('online'); });
+                    hls.on(Hls.Events.ERROR, (_e, d) => {
+                        if (!d.fatal) return;
+                        if (d.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            if (++recoveries > 3) { fail(); return; }
+                            setStatus('connecting');
+                            hls.recoverMediaError();
+                        } else if (d.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                            if (++netErr > 2) { fail(); return; }
+                            setStatus('connecting');
+                            hls.startLoad();
+                        } else {
+                            fail();
+                        }
+                    });
+                    hls.attachMedia(v);
+
+                    // Siaran membeku tanpa error: tandai offline dan sambung ulang
+                    stallWatch = setInterval(() => { if (hls && Date.now() - lastFrag > 20000) fail(); }, 5000);
+                } else if (v.canPlayType('application/vnd.apple.mpegurl')) {
+                    const ok = () => apply('online'), bad = () => { apply('offline'); again(); };
+                    v.addEventListener('loadeddata', ok);
+                    v.addEventListener('error', bad);
+                    v.src = camera.streamUrl;
+                    v.play().catch(() => {});
+                    off = () => { v.removeEventListener('loadeddata', ok); v.removeEventListener('error', bad); v.removeAttribute('src'); v.load(); };
+                } else { apply('offline'); }
+
+                return () => {
+                    clearTimeout(retryTimer); clearInterval(playWatch); clearInterval(stallWatch);
+                    if (hls) { hls.destroy(); hls = null; }
+                    if (off) off();
+                };
+            }, [camera.id, camera.streamUrl, reloadKey, retry]);
+
+            useEffect(() => {
+                const fn = () => setFs(document.fullscreenElement === box.current);
+                document.addEventListener('fullscreenchange', fn);
+                document.addEventListener('webkitfullscreenchange', fn);
+                return () => { document.removeEventListener('fullscreenchange', fn); document.removeEventListener('webkitfullscreenchange', fn); };
+            }, []);
+            const toggleFS = useCallback(() => {
+                const el = box.current, v = vid.current;
+                if (document.fullscreenElement) { if (document.exitFullscreen) document.exitFullscreen(); return; }
+                const req = el && (el.requestFullscreen || el.webkitRequestFullscreen);
+                if (req) req.call(el);
+                else if (v && v.webkitEnterFullscreen) v.webkitEnterFullscreen(); // iPhone
+            }, []);
+
+            // Pintasan F = layar penuh (tidak aktif saat mengetik atau saat jendela Info terbuka)
+            useEffect(() => {
+                const fn = (e) => {
+                    if (e.ctrlKey || e.metaKey || e.altKey || /INPUT|SELECT|TEXTAREA/.test(e.target.tagName || '')) return;
+                    if (document.querySelector('[role="dialog"]')) return;
+                    if (e.key === 'f' || e.key === 'F') toggleFS();
+                };
+                document.addEventListener('keydown', fn);
+                return () => document.removeEventListener('keydown', fn);
+            }, [toggleFS]);
+
+            const live = status === 'online';
+            return (
+                <div ref={box} className="grp relative w-full h-full bg-black overflow-hidden">
+                    <video ref={vid} autoPlay muted playsInline poster={camera.snapshotUrl || undefined}
+                           className="w-full h-full object-contain bg-black" />
+
+                    {!live && (
+                        <div className={`absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none ${status === 'offline' ? 'stripe' : 'bg-imipas-blue/60'}`}>
+                            {status === 'offline' ? (
+                                <>
+                                    <Icon name="x" className="w-6 h-6 text-rose-400 mb-2" />
+                                    <span className="text-white font-semibold text-[13px]">Sinyal terputus</span>
+                                    <span className="text-white/70 text-[11.5px] mt-0.5">Mencoba menyambung kembali&hellip;</span>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="w-7 h-7 rounded-full border-2 border-white/20 border-t-imipas-gold spin-slow mb-2" />
+                                    <span className="text-white font-semibold text-[12.5px]">Menghubungkan&hellip;</span>
+                                </>
+                            )}
+                        </div>
+                    )}
+
+                    <div className="absolute top-0 inset-x-0 z-20 flex items-center justify-between gap-3 px-3 py-2.5 bg-gradient-to-b from-black/55 via-black/20 to-transparent pointer-events-none">
+                        <span className="flex items-center gap-2 min-w-0 text-[13px] font-semibold text-white">
+                            <span className="truncate">{camera.nama}</span>
+                            <span className="hidden md:inline text-imipas-goldSoft/80 font-normal text-[12px] truncate">&middot; {camera.grup}</span>
+                        </span>
+                        <span className={`flex items-center gap-1.5 text-[10px] font-mono font-medium shrink-0 px-2 py-0.5 rounded-md ${live ? 'bg-rose-600 text-white' : 'bg-white/20 text-white'}`}>
+                            <span className={`w-1.5 h-1.5 rounded-full ${live ? 'bg-white animate-pulse' : 'bg-white/60'}`} />
+                            {live ? 'LIVE' : 'OFF'}
+                        </span>
+                    </div>
+
+                    <div className="absolute bottom-0 inset-x-0 z-20 flex items-end justify-between gap-2 px-3 py-2.5 bg-gradient-to-t from-black/55 via-black/20 to-transparent pointer-events-none">
+                        {live ? <LiveClock className="text-[11px] text-white/85" /> : <span className="font-mono text-[11px] text-white/40">--/--/---- --:--:--</span>}
+                    </div>
+
+                    <div className="ctl absolute bottom-2.5 right-3 z-30 flex items-center gap-1.5">
+                        <button onClick={onMute} aria-label={muted ? "Aktifkan suara" : "Matikan suara"} title="Suara (M)" className={hudBtn}>
+                            <Icon name={muted ? "volumeX" : "volume"} />
+                        </button>
+                        <button onClick={toggleFS} aria-label="Layar penuh" title="Layar penuh (F)" className={hudBtn}>
+                            <Icon name={fs ? "minimize" : "maximize"} />
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        /* ---------- ITEM DAFTAR KAMERA ---------- */
+        const CameraItem = ({ camera, status, isActive, showGrup, snapVer, onClick }) => {
+            const ref = useRef(null);
+            const [err, setErr] = useState(false);
+            useEffect(() => setErr(false), [camera.snapshotUrl, snapVer]);
+            useEffect(() => { if (isActive && ref.current) ref.current.scrollIntoView({ block: 'nearest' }); }, [isActive]);
+            const s = ST[status] || ST.checking;
+            return (
+                <button ref={ref} onClick={onClick} aria-current={isActive}
+                        className={`w-full flex items-center gap-2 pl-2 pr-2.5 py-1.5 sm:gap-2.5 sm:pl-2.5 sm:pr-3 sm:py-2 text-left border-l-[3px] transition-colors focus:outline-none focus-visible:bg-imipas-gold/25 ${isActive ? 'bg-imipas-gold/20 border-l-imipas-gold' : 'border-l-transparent hover:bg-imipas-blue/5'}`}>
+                    <div className="w-[56px] h-[34px] sm:w-[68px] sm:h-[42px] rounded-md sm:rounded-lg overflow-hidden shrink-0 border border-imipas-blue/15 relative bg-imipas-blue2">
+                        {camera.snapshotUrl && !err
+                            ? <img src={withVer(camera.snapshotUrl, snapVer)} alt="" loading="lazy" onError={() => setErr(true)} className="w-full h-full object-cover" />
+                            : <div className="w-full h-full flex items-center justify-center dots"><Icon name="camera" className="w-4 h-4 text-white/40" /></div>}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                        <p className={`text-[12.5px] truncate leading-tight text-imipas-blue ${isActive ? 'font-bold' : 'font-semibold'}`}>{camera.nama}</p>
+                        <p className="text-[11px] truncate mt-0.5" style={{ color: 'rgba(7,33,61,.65)' }}>{showGrup ? camera.grup : camera.kota}</p>
+                    </div>
+                    <span className={`shrink-0 w-2.5 h-2.5 rounded-full ${s.dot}`} title={s.txt} aria-label={s.txt} />
+                </button>
+            );
+        };
+
+        /* ---------- WATERMARK / FOOTER (satu baris, responsif) ---------- */
+        const Watermark = () => {
+            const year = new Date().getFullYear();
+            return (
+                <div className="shrink-0 border-t border-imipas-blue/10 px-3 pt-1 text-center" style={{ paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom))' }}>
+                    <p className="text-[10px] leading-[14px] text-balance"
+                       style={{ color: 'rgba(7,33,61,.6)' }}>
+                        <span className="font-bold tracking-wider text-imipas-blue/80">PANTAUPAS</span> &copy; {year} <span className="font-bold text-imipas-gold">&middot;</span> Tim Perencanaan dan RB Kanwil Ditjen PAS Kalsel X POLIBAN
+                    </p>
+                </div>
+            );
+        };
+
+        /* ---------- APP ---------- */
+        function App() {
+            const firstGrup = GROUPS.find(g => CCTV.some(c => c.grup === g)) || ALL;
+            const [selectedGrup, setSelectedGrup] = useState(firstGrup);
+            const [activeId, setActiveId] = useState(() => (CCTV.find(c => c.grup === firstGrup) || CCTV[0] || {}).id || null);
+            const [search, setSearch] = useState('');
+            const [statFilter, setStatFilter] = useState('all');
+            const [statusMap, setStatusMap] = useState({});
+            const [reloadKey, setReloadKey] = useState(0);
+            const [muted, setMuted] = useState(true);
+            const [showInfo, setShowInfo] = useState(false);
+            const [snapVer, setSnapVer] = useState(() => Math.floor(Date.now() / 300000));
+
+            // ---- Mode HP: daftar kamera menjadi panel yang menutupi layar (pemutar tidak pernah mengecil) ----
+            const [listOpen, setListOpen] = useState(false);
+
+            const setStatus = useCallback((id, s) => setStatusMap(m => m[id] === s ? m : { ...m, [id]: s }), []);
+            const statusOf = (id) => statusMap[id] || 'checking';
+
+            useEffect(() => {
+                const t = setInterval(() => setSnapVer(Math.floor(Date.now() / 300000)), 60000);
+                return () => clearInterval(t);
+            }, []);
+
+            // Pemeriksa latar belakang: pantau status SELURUH kamera tanpa membuka siarannya
+            // (cukup mengambil manifest HLS). Kamera yang sedang ditonton dilaporkan oleh pemutarnya.
+            const activeRef = useRef(activeId);
+            useEffect(() => { activeRef.current = activeId; }, [activeId]);
+            const selectedRef = useRef(selectedGrup);
+            useEffect(() => { selectedRef.current = selectedGrup; }, [selectedGrup]);
+
+            useEffect(() => {
+                let dead = false, running = false;
+                const TIMEOUT = 4500, CONCURRENCY = 6, INTERVAL = 45000;
+
+                const checkOne = async (cam) => {
+                    const ctrl = new AbortController();
+                    const t = setTimeout(() => ctrl.abort(), TIMEOUT);
+                    try {
+                        const r = await fetch(cam.streamUrl, { cache: 'no-store', signal: ctrl.signal });
+                        const isHtml = (r.headers.get('content-type') || '').includes('text/html');
+                        try { if (r.body) r.body.cancel(); } catch (e) {}
+                        if (!dead) setStatus(cam.id, (r.ok && !isHtml) ? 'online' : 'offline');
+                    } catch (e) {
+                        if (!dead) setStatus(cam.id, 'offline');
+                    } finally {
+                        clearTimeout(t);
+                    }
+                };
+
+                const run = async () => {
+                    if (document.hidden || running) return;
+                    running = true;
+                    try {
+                        CCTV.forEach(c => { if (!c.streamUrl) setStatus(c.id, 'offline'); });
+                        const queue = CCTV.filter(c => c.streamUrl && c.id !== activeRef.current).sort((a, b) => {
+                            const aCur = a.grup === selectedRef.current ? 0 : 1;
+                            const bCur = b.grup === selectedRef.current ? 0 : 1;
+                            return aCur - bCur;
+                        });
+                        for (let i = 0; i < queue.length; i += CONCURRENCY) {
+                            if (dead) return;
+                            await Promise.all(queue.slice(i, i + CONCURRENCY).map(checkOne));
+                        }
+                    } finally {
+                        running = false;
+                    }
+                };
+
+                run();
+                const iv = setInterval(run, INTERVAL);
+                return () => { dead = true; clearInterval(iv); };
+            }, [setStatus]);
+
+            const counts = useMemo(() => {
+                const c = { [ALL]: CCTV.length };
+                GROUPS.forEach(g => { c[g] = 0; });
+                CCTV.forEach(cam => { c[cam.grup] = (c[cam.grup] || 0) + 1; });
+                return c;
+            }, []);
+
+            const filtered = useMemo(() => {
+                const q = search.trim().toLowerCase();
+                return CCTV.filter(cam =>
+                    (selectedGrup === ALL || cam.grup === selectedGrup) &&
+                    (statFilter === 'all' || (statusMap[cam.id] || 'checking') === statFilter) &&
+                    (!q || (cam.nama || '').toLowerCase().includes(q) || (cam.grup || '').toLowerCase().includes(q) || (cam.kota || '').toLowerCase().includes(q))
+                );
+            }, [selectedGrup, search, statFilter, statusMap]);
+
+            const active = CCTV.find(c => c.id === activeId) || null;
+
+            // Kamera aktif hanya diganti saat pengguna mengubah UPT, pencarian, atau filter,
+            // bukan saat status kamera berubah sendiri.
+            useEffect(() => {
+                setActiveId(cur => filtered.some(c => c.id === cur) ? cur : (filtered[0] ? filtered[0].id : null));
+            }, [selectedGrup, search, statFilter]);
+
+            // Bila belum ada kamera terpilih (mis. filter Live dipilih sebelum status terbaca), pilih yang pertama saat tersedia
+            useEffect(() => {
+                if (activeId === null && filtered.length > 0) setActiveId(filtered[0].id);
+            }, [filtered, activeId]);
+
+            // Daftar kamera sesuai UPT yang dipilih + kata kunci pencarian (belum terkena filter status).
+            // Angka pada chip "Semua / Live / Offline" dihitung dari daftar ini agar
+            // konsisten dengan kamera yang sedang ditampilkan pada UPT terpilih.
+            const base = useMemo(() => {
+                const q = search.trim().toLowerCase();
+                return CCTV.filter(cam =>
+                    (selectedGrup === ALL || cam.grup === selectedGrup) &&
+                    (!q || (cam.nama || '').toLowerCase().includes(q) || (cam.grup || '').toLowerCase().includes(q) || (cam.kota || '').toLowerCase().includes(q))
+                );
+            }, [selectedGrup, search]);
+
+            const total = base.length;
+            const online = base.filter(c => statusOf(c.id) === 'online').length;
+            const offline = base.filter(c => statusOf(c.id) === 'offline').length;
+            const chipN = { all: total, online, offline };
+
+            const changeGrup = (g) => { setSelectedGrup(g); setSearch(''); };
+
+            const step = useCallback((d) => {
+                if (!filtered.length) return;
+                const i = filtered.findIndex(c => c.id === activeId);
+                const next = i < 0 ? (d > 0 ? 0 : filtered.length - 1) : (i + d + filtered.length) % filtered.length;
+                setActiveId(filtered[next].id);
+            }, [filtered, activeId]);
+
+            // Pintasan: panah = pindah kamera, M = suara, R = muat ulang
+            useEffect(() => {
+                const fn = (e) => {
+                    if (showInfo || e.ctrlKey || e.metaKey || e.altKey || /INPUT|SELECT|TEXTAREA/.test((e.target.tagName || ''))) return;
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+                    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+                    if (e.key === 'm' || e.key === 'M') setMuted(m => !m);
+                    if (e.key === 'r' || e.key === 'R') setReloadKey(k => k + 1);
+                };
+                document.addEventListener('keydown', fn);
+                return () => document.removeEventListener('keydown', fn);
+            }, [step, showInfo]);
+
+            useEffect(() => {
+                if (!showInfo) return;
+                const fn = (e) => { if (e.key === 'Escape') setShowInfo(false); };
+                document.addEventListener('keydown', fn);
+                return () => document.removeEventListener('keydown', fn);
+            }, [showInfo]);
+
+            useEffect(() => {
+                if (!listOpen) return;
+                const onKey = (e) => { if (e.key === 'Escape' && !showInfo) setListOpen(false); };
+                const onResize = () => { if (window.innerWidth >= 1024) setListOpen(false); };
+                document.addEventListener('keydown', onKey);
+                window.addEventListener('resize', onResize);
+                return () => { document.removeEventListener('keydown', onKey); window.removeEventListener('resize', onResize); };
+            }, [listOpen, showInfo]);
+
+            const navBtn = "flex items-center justify-center gap-1.5 h-8 px-2.5 rounded-xl text-[12px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft";
+            const navStyle = { background: 'rgba(224,226,227,0.08)', border: '1px solid rgba(224,226,227,0.16)', color: '#E0E2E3' };
+            const pos = active ? filtered.findIndex(c => c.id === active.id) + 1 : 0;
+            const gold = '#8A5F10'; // emas lebih tua agar terbaca di latar terang
+
+            return (
+                <div className="flex flex-col fade-up" style={{ height: '100dvh' }}>
+                    {/* HEADER */}
+                    <header className="shrink-0 relative flex items-center justify-between gap-3 px-3 lg:px-4 z-40" style={{ height: '56px', background: 'linear-gradient(160deg,#0F2A47 0%,#08192B 100%)', paddingTop: 'env(safe-area-inset-top)', paddingLeft: 'max(0.75rem, env(safe-area-inset-left))', paddingRight: 'max(0.75rem, env(safe-area-inset-right))' }}>
+                        <div className="dots absolute inset-0 pointer-events-none" />
+                        <div className="goldline absolute bottom-0 inset-x-0 h-[3px]" />
+                        <div className="relative flex items-center gap-3 min-w-0">
+                            <img src="logo-kanwil.png" alt="Logo" className="h-8 w-auto object-contain shrink-0" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                            <div className="leading-tight min-w-0">
+                                <div className="flex items-center gap-2">
+                                    <span className="text-[15px] font-bold tracking-widest uppercase text-imipas-platinum">PANTAUPAS</span>
+                                    <span className="hidden sm:inline text-[9.5px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded-md bg-imipas-gold text-imipas-blue">Command Center</span>
+                                </div>
+                                <p className="hidden sm:block text-[11px] font-medium mt-0.5 truncate" style={{ color: 'rgba(224,226,227,0.75)' }}>Ditjen Pemasyarakatan Kalimantan Selatan</p>
+                            </div>
+                        </div>
+
+                        <div className="relative flex items-center gap-1.5 shrink-0">
+                            <LiveClock className="hidden xl:block text-[11.5px] font-medium pr-3 mr-1 border-r border-white/15 text-imipas-platinum/80" />
+                            <a href="matrix.php" title="Tampilan Matrix" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="grid" /><span className="hidden sm:inline">Matrix</span></a>
+                            <button onClick={() => setShowInfo(true)} title="Informasi Sistem" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="info" /><span className="hidden sm:inline">Info</span></button>
+                            <a href="logout.php" className={navBtn} style={{ color: '#FDA4AF' }}
+                               onMouseOver={e => e.currentTarget.style.background = 'rgba(244,63,94,0.15)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+                                <Icon name="logout" /><span className="hidden sm:inline">Keluar</span>
+                            </a>
+                        </div>
+                    </header>
+
+                    {/* BODY */}
+                    <div className="relative flex flex-col lg:flex-row flex-1 min-h-0 gap-2 sm:gap-3 p-2 sm:p-3 lg:p-4">
+                        {/* PLAYER */}
+                        <section className="flex flex-col shrink-0 lg:shrink lg:flex-1 lg:h-auto min-w-0 bg-black rounded-2xl overflow-hidden ring-1 ring-black/20">
+                            <div className="relative w-full aspect-video min-h-[40dvh] sm:min-h-[46dvh] lg:aspect-auto lg:min-h-0 lg:flex-1">
+                                {active ? (
+                                    <CctvPlayer key={active.id} camera={active} reloadKey={reloadKey} onStatus={setStatus} muted={muted} onMute={() => setMuted(m => !m)} />
+                                ) : (
+                                    <div className="w-full h-full flex flex-col items-center justify-center text-center px-8 relative" style={{ background: 'linear-gradient(160deg,#0F2A47,#08192B)' }}>
+                                        <div className="dots absolute inset-0 pointer-events-none" />
+                                        <div className="relative">
+                                            <Icon name="camera" className="w-8 h-8 text-imipas-gold mx-auto mb-3" />
+                                            <p className="text-white font-semibold text-[14px]">Belum ada kamera pada pilihan ini</p>
+                                            <p className="text-white/70 text-[12px] mt-1">Pilih UPT lain, ubah filter status, atau ganti kata kunci.</p>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            {active && (
+                                <div className="shrink-0 flex items-center justify-between gap-3 px-3 py-2 border-t border-white/10" style={{ background: '#08192B' }}>
+                                    <div className="flex items-center gap-2.5 min-w-0">
+                                        <span className="text-[11px] font-mono text-imipas-gold font-semibold tabular-nums">{pos > 0 ? `${pos}/${filtered.length}` : '-'}</span>
+                                        <span className="hidden sm:inline text-white/40">&middot;</span>
+                                        <span className="text-[12px] font-semibold text-white truncate max-w-[200px] sm:max-w-xs">{active.nama}</span>
+                                        <span className="hidden md:inline text-[11px] px-2 py-0.5 rounded-full bg-white/10 text-imipas-platinum/80 font-normal truncate">{active.grup}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5 shrink-0">
+                                        <button onClick={() => step(-1)} aria-label="Kamera sebelumnya" title={"Sebelumnya (\u2190)"} className={hudBtn}><Icon name="chevLeft" /></button>
+                                        <button onClick={() => step(1)} aria-label="Kamera berikutnya" title={"Berikutnya (\u2192)"} className={hudBtn}><Icon name="chevRight" /></button>
+                                        <button onClick={() => setReloadKey(k => k + 1)} aria-label="Muat ulang siaran" title="Muat ulang (R)" className={hudBtn}><Icon name="refresh" /></button>
+                                    </div>
+                                </div>
+                            )}
+                        </section>
+
+                        {/* DAFTAR KAMERA (terang, selaras dengan kartu formulir login) */}
+                        <aside className={`w-full lg:w-[19rem] xl:w-80 flex-1 lg:flex-none flex flex-col border-t-[3px] lg:border-t-0 lg:border-l min-h-0 text-imipas-blue rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] ring-1 ring-black/10 ${listOpen ? 'max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:top-[56px] max-lg:z-50 max-lg:rounded-b-none max-lg:shadow-2xl sheet-open' : ''}`} style={{ background: '#F1F2F3', borderColor: '#D6A34C' }}>
+                            <button onClick={() => setListOpen(o => !o)} aria-expanded={listOpen}
+                                    aria-label={listOpen ? 'Tutup daftar kamera' : 'Buka daftar kamera'} title={listOpen ? 'Tutup daftar kamera' : 'Buka daftar kamera'}
+                                    className="lg:hidden shrink-0 w-full py-1.5 flex flex-col items-center justify-center gap-0.5 border-b border-imipas-blue/10 bg-white/60 hover:bg-imipas-gold/20 active:bg-imipas-gold/30 transition-colors focus:outline-none">
+                                <span className="w-10 h-1 rounded-full bg-imipas-blue/30" />
+                                <span className="text-[11px] font-semibold text-imipas-blue flex items-center gap-1.5">
+                                    <Icon name="camera" className="w-3 h-3 text-imipas-gold" />
+                                    {listOpen ? 'Tutup Daftar Kamera' : `Daftar Kamera (${filtered.length})`}
+                                    <Icon name={listOpen ? 'chevronDown' : 'chevUp'} className="w-3.5 h-3.5 text-imipas-blue/60" />
+                                </span>
+                            </button>
+                            <div className="shrink-0 p-2 sm:p-3 border-b border-imipas-blue/10 space-y-1.5 sm:space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <span className="flex items-center gap-1.5 text-[11.5px] font-bold tracking-wider uppercase text-imipas-blue"><Icon name="camera" className="w-3.5 h-3.5" style={{ color: gold }} />Daftar Kamera</span>
+                                    <span className="text-[10.5px] font-semibold px-2 py-0.5 rounded-md tabular-nums" style={{ background: 'rgba(7,33,61,.08)', color: 'rgba(7,33,61,.75)' }}>{filtered.length}/{total}</span>
+                                </div>
+                                <div className="flex flex-row sm:flex-col gap-1.5 sm:gap-2">
+                                    <div className="relative flex-1 min-w-0">
+                                        <Icon name="mapPin" className="w-3.5 h-3.5 absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                        <select value={selectedGrup} onChange={e => changeGrup(e.target.value)} aria-label="Pilih UPT" className="field appearance-none cursor-pointer truncate w-full" style={{ paddingRight: '28px', fontWeight: 600 }}>
+                                            <option value={ALL}>{ALL} ({counts[ALL]})</option>
+                                            {GROUPS.map(g => <option key={g} value={g}>{g} ({counts[g] || 0})</option>)}
+                                        </select>
+                                        <Icon name="chevronDown" className="w-3.5 h-3.5 absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                    </div>
+                                    <div className="relative flex-1 min-w-0">
+                                        <Icon name="search" className="w-3.5 h-3.5 absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: 'rgba(7,33,61,.55)' }} />
+                                        <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Cari kamera" className="field w-full" style={{ paddingRight: '28px' }} />
+                                        {search && (
+                                            <button onClick={() => setSearch('')} aria-label="Hapus pencarian" className="absolute inset-y-0 right-0 pr-2 flex items-center hover:text-imipas-blue" style={{ color: 'rgba(7,33,61,.55)' }}><Icon name="x" className="w-3.5 h-3.5" /></button>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-1.5" role="group" aria-label="Filter status">
+                                    {CHIPS.map(([k, label]) => {
+                                        const act = statFilter === k;
+                                        const numColor = k === 'online' ? '#059669' : k === 'offline' ? '#E11D48' : 'rgba(7,33,61,.75)';
+                                        return (
+                                            <button key={k} onClick={() => setStatFilter(k)} aria-pressed={act}
+                                                    className="flex-1 h-6 sm:h-7 rounded-lg text-[10.5px] sm:text-[11px] font-semibold tabular-nums transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-gold"
+                                                    style={act
+                                                        ? { background: '#08192B', border: '1px solid #08192B', color: '#D6A34C' }
+                                                        : { background: '#fff', border: '1px solid rgba(7,33,61,.2)', color: 'rgba(7,33,61,.75)' }}>
+                                                {label} <span style={act ? { color: k === 'online' ? '#6EE7B7' : k === 'offline' ? '#FDA4AF' : '#D6A34C' } : { color: numColor }}>{chipN[k]}</span>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                                <p className="max-lg:hidden text-[10px] leading-tight" style={{ color: 'rgba(7,33,61,.58)' }}>Status semua kamera dipantau otomatis tiap menit. Pintasan: <kbd className="font-mono">&larr;&rarr;</kbd> kamera, <kbd className="font-mono">F</kbd> layar penuh, <kbd className="font-mono">M</kbd> suara, <kbd className="font-mono">R</kbd> muat ulang.</p>
+                            </div>
+
+                            <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-imipas-blue/10">
+                                {filtered.length === 0 ? (
+                                    <div className="flex flex-col items-center justify-center py-12 text-center px-6">
+                                        <Icon name="search" className="w-6 h-6 mb-2" style={{ color: 'rgba(7,33,61,.3)' }} />
+                                        <p className="text-[12.5px] font-semibold" style={{ color: 'rgba(7,33,61,.7)' }}>{counts[selectedGrup] === 0 ? 'Belum ada kamera terpasang.' : 'Kamera tidak ditemukan.'}</p>
+                                    </div>
+                                ) : filtered.map(cam => (
+                                    <CameraItem key={cam.id} camera={cam} status={statusOf(cam.id)} isActive={cam.id === activeId}
+                                                showGrup={selectedGrup === ALL} snapVer={snapVer} onClick={() => { setActiveId(cam.id); setListOpen(false); }} />
+                                ))}
+                            </div>
+
+                            <Watermark />
+                        </aside>
+                    </div>
+
+                    {/* INFO */}
+                    {showInfo && (
+                        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center backdrop-blur-sm p-0 sm:p-6" style={{ background: 'rgba(7,33,61,.78)' }} role="dialog" aria-modal="true" aria-label="Informasi Sistem" onClick={() => setShowInfo(false)}>
+                            <div onClick={e => e.stopPropagation()} className="fade-up relative rounded-t-2xl sm:rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col border border-imipas-blue/10 text-imipas-blue" style={{ maxHeight: '90dvh', background: '#F1F2F3' }}>
+                                <div className="goldline absolute top-0 inset-x-0 h-[3px] z-10" />
+                                <div className="relative flex items-center justify-between px-5 py-3.5 shrink-0" style={{ background: 'linear-gradient(160deg,#0F2A47 0%,#08192B 100%)' }}>
+                                    <div className="dots absolute inset-0 pointer-events-none" />
+                                    <h1 className="relative text-[14.5px] font-bold text-imipas-platinum tracking-wider uppercase flex items-center gap-2.5"><Icon name="shield" className="w-4 h-4 text-imipas-gold" />Informasi Sistem</h1>
+                                    <button onClick={() => setShowInfo(false)} aria-label="Tutup" className="relative w-8 h-8 flex items-center justify-center rounded-lg text-white/75 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-goldSoft"><Icon name="x" /></button>
+                                </div>
+                                <div className="px-5 py-5 overflow-y-auto space-y-4 text-[13px] leading-relaxed" style={{ color: 'rgba(7,33,61,.8)' }}>
+                                    <section>
+                                        <h4 className="text-[14.5px] font-semibold text-imipas-blue mb-1.5">Apa itu PANTAUPAS?</h4>
+                                        <p className="mb-2"><strong className="text-imipas-blue">PANTAUPAS (Pantauan Pemasyarakatan)</strong> adalah sistem pengawasan terpadu yang menghimpun seluruh siaran langsung CCTV dari berbagai Unit Pelaksana Teknis (UPT) di Lingkungan Kantor Wilayah Direktorat Jenderal Pemasyarakatan Kalimantan Selatan.</p>
+                                        <p>Guna meningkatkan kualitas pelayanan publik dan pengawasan serta memperkuat potensi deteksi dini terhadap pelayanan yang tidak sesuai dari seluruh UPT Pemasyarakatan Se-Kalimantan Selatan.</p>
+                                    </section>
+                                    <hr className="border-imipas-blue/10" />
+                                    <section className="space-y-3">
+                                        <h3 className="text-[11.5px] font-bold uppercase tracking-wider" style={{ color: gold }}>Pertanyaan Umum</h3>
+                                        <div>
+                                            <h4 className="font-semibold text-imipas-blue">Bagaimana sistem ini menjamin keamanan data rekaman?</h4>
+                                            <p className="mt-1">PANTAUPAS tidak mengekspos video melalui tautan internet secara publik. Sistem beroperasi dengan keamanan username dan password yang hanya dapat diakses oleh perangkat yang telah terautentikasi.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-imipas-blue">Siapa yang memantau dan mengelola sistem ini?</h4>
+                                            <p className="mt-1">Sistem dipusatkan, diawasi, dan dikelola sepenuhnya oleh Kantor Wilayah Direktorat Jenderal Pemasyarakatan Kalimantan Selatan sebagai Command Center utama.</p>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-imipas-blue">Pintasan papan ketik</h4>
+                                            <p className="mt-1">Panah: pindah kamera. {['F','M','R','Esc'].map((k, i) => <span key={k}><kbd className="font-mono text-[12px] px-1.5 py-0.5 rounded bg-imipas-gold/30 text-imipas-blue">{k}</kbd>{['  layar penuh, ', ' suara, ', ' muat ulang siaran, ', ' tutup jendela ini.'][i]}</span>)}</p>
+                                        </div>
+                                    </section>
+                                    <hr className="border-imipas-blue/10" />
+                                    <section className="p-4 rounded-xl border border-imipas-blue/10 bg-white">
+                                        <h3 className="text-[11.5px] font-bold mb-2 uppercase tracking-wider" style={{ color: gold }}>Tim Pengembang</h3>
+                                        <p className="mb-2">Sistem arsitektur pemantauan ini diinisiasi oleh <strong className="text-imipas-blue">Bapak Sugito dan Tim Perencanaan dan Reformasi Birokrasi</strong> Kantor Wilayah serta pengembangannya berkolaborasi dengan mahasiswa Teknik Informatika <strong className="text-imipas-blue">Politeknik Negeri Banjarmasin</strong>:</p>
+                                        <ul className="list-disc list-inside space-y-1 font-semibold text-imipas-blue marker:text-imipas-gold">
+                                            <li>SUGITO, A.Md.IP, S.Sos, M.A.</li>
+                                            <li>Krisna Aji Pambudi, S.T.</li>
+                                            <li>Mochamad Sonny Wicaksono</li>
+                                            <li>Ridho Drajat</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                <div className="px-5 py-3.5 border-t border-imipas-blue/10 shrink-0">
+                                    <button onClick={() => setShowInfo(false)} className="w-full font-bold text-[14px] py-2.5 rounded-xl transition-all hover:brightness-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-imipas-blue" style={{ background: 'linear-gradient(135deg,#D6A34C,#E3B04F)', color: '#08192B', boxShadow: '0 4px 18px rgba(238,191,99,.45)' }}>Mulai Memantau</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
