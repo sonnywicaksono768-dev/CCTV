@@ -55,10 +55,6 @@ const INITIAL_CCTV_DATA = [
     { id: "cctv-36", nama: "Kamera 8 Lapas Banjarmasin", path: "kamera_lapasbanjar8", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
     { id: "cctv-37", nama: "Kamera 9 Lapas Banjarmasin", path: "kamera_lapasbanjar9", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
     { id: "cctv-38", nama: "Kamera 10 Lapas Banjarmasin", path: "kamera_lapasbanjar10", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
-    { id: "cctv-29-11", nama: "Kamera 11 Lapas Banjarmasin", path: "kamera_lapasbanjar11", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
-    { id: "cctv-29-12", nama: "Kamera 12 Lapas Banjarmasin", path: "kamera_lapasbanjar12", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
-    { id: "cctv-29-13", nama: "Kamera 13 Lapas Banjarmasin", path: "kamera_lapasbanjar13", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
-    { id: "cctv-29-14", nama: "Kamera 14 Lapas Banjarmasin", path: "kamera_lapasbanjar14", grup: "Lapas Kelas IIA Banjarmasin", kota: "Banjarmasin" },
 
     // =========================================================
     // 5. RUTAN KELAS IIB RANTAU — 16 KAMERA
@@ -81,7 +77,7 @@ const INITIAL_CCTV_DATA = [
     { id: "cctv-54", nama: "Kamera 16 Rutan Rantau", path: "kamera_rutanrantau16", grup: "Rutan Kelas IIB Rantau", kota: "Rantau" },
 
     // =========================================================
-    // 6. LAPAS KELAS IIB AMUNTAI — 10 KAMERA
+    // 6. LAPAS KELAS IIB AMUNTAI — 20 KAMERA
     // =========================================================
     { id: "cctv-55-1", nama: "Kamera 1 Lapas Amuntai", path: "kamera_amuntai1", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
     { id: "cctv-55-2", nama: "Kamera 2 Lapas Amuntai", path: "kamera_amuntai2", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
@@ -93,9 +89,19 @@ const INITIAL_CCTV_DATA = [
     { id: "cctv-55-8", nama: "Kamera 8 Lapas Amuntai", path: "kamera_amuntai8", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
     { id: "cctv-55-9", nama: "Kamera 9 Lapas Amuntai", path: "kamera_amuntai9", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
     { id: "cctv-55-10", nama: "Kamera 10 Lapas Amuntai", path: "kamera_amuntai10", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-11", nama: "Kamera 11 Lapas Amuntai", path: "kamera_amuntai11", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-12", nama: "Kamera 12 Lapas Amuntai", path: "kamera_amuntai12", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-13", nama: "Kamera 13 Lapas Amuntai", path: "kamera_amuntai13", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-14", nama: "Kamera 14 Lapas Amuntai", path: "kamera_amuntai14", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-15", nama: "Kamera 15 Lapas Amuntai", path: "kamera_amuntai15", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-16", nama: "Kamera 16 Lapas Amuntai", path: "kamera_amuntai16", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-17", nama: "Kamera 17 Lapas Amuntai", path: "kamera_amuntai17", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-18", nama: "Kamera 18 Lapas Amuntai", path: "kamera_amuntai18", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-19", nama: "Kamera 19 Lapas Amuntai", path: "kamera_amuntai19", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
+    { id: "cctv-55-20", nama: "Kamera 20 Lapas Amuntai", path: "kamera_amuntai20", grup: "Lapas Kelas IIB Amuntai", kota: "Amuntai" },
 
     // =========================================================
-    // 7. LPKA KELAS I MARTAPURA — 8 KAMERA
+    // 7. LPKA KELAS I MARTAPURA — 4 KAMERA
     // =========================================================
     { id: "cctv-56", nama: "Kamera 1 LPKA Martapura", path: "kamera_lpkamartapura1", grup: "LPKA Kelas I Martapura", kota: "Martapura" },
     { id: "cctv-57", nama: "Kamera 2 LPKA Martapura", path: "kamera_lpkamartapura2", grup: "LPKA Kelas I Martapura", kota: "Martapura" },
@@ -141,10 +147,10 @@ const INITIAL_CCTV_DATA = [
     { id: "cctv-93", nama: "Kamera 14 Rutan Tanjung", path: "kamera_rutantanjung14", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
     { id: "cctv-94", nama: "Kamera 15 Rutan Tanjung", path: "kamera_rutantanjung15", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
     { id: "cctv-95", nama: "Kamera 16 Rutan Tanjung", path: "kamera_rutantanjung16", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
-    { id: "cctv-80-17", nama: "Kamera 17 Rutan Tanjung", path: "kamera_rutantanjung17", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
-    { id: "cctv-80-18", nama: "Kamera 18 Rutan Tanjung", path: "kamera_rutantanjung18", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
-    { id: "cctv-80-19", nama: "Kamera 19 Rutan Tanjung", path: "kamera_rutantanjung19", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
-    { id: "cctv-80-20", nama: "Kamera 20 Rutan Tanjung", path: "kamera_rutantanjung20", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
+    { id: "cctv-96-dahua1", nama: "Kamera 17 Rutan Tanjung", path: "kamera_rutantanjung17", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
+    { id: "cctv-96-dahua2", nama: "Kamera 18 Rutan Tanjung", path: "kamera_rutantanjung18", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
+    { id: "cctv-96-dahua3", nama: "Kamera 19 Rutan Tanjung", path: "kamera_rutantanjung19", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
+    { id: "cctv-96-dahua4", nama: "Kamera 20 Rutan Tanjung", path: "kamera_rutantanjung20", grup: "Rutan Kelas IIB Tanjung", kota: "Tanjung" },
 
     // =========================================================
     // 10. LAPAS KELAS III BATULICIN — 8 KAMERA
@@ -180,7 +186,23 @@ const INITIAL_CCTV_DATA = [
     { id: "cctv-116", nama: "Kamera 5 Lapas Banjarbaru", path: "kamera_banjarbaru5", grup: "Lapas Kelas IIB Banjarbaru", kota: "Banjarbaru" },
     { id: "cctv-117", nama: "Kamera 6 Lapas Banjarbaru", path: "kamera_banjarbaru6", grup: "Lapas Kelas IIB Banjarbaru", kota: "Banjarbaru" },
     { id: "cctv-118", nama: "Kamera 7 Lapas Banjarbaru", path: "kamera_banjarbaru7", grup: "Lapas Kelas IIB Banjarbaru", kota: "Banjarbaru" },
-    { id: "cctv-119", nama: "Kamera 8 Lapas Banjarbaru", path: "kamera_banjarbaru8", grup: "Lapas Kelas IIB Banjarbaru", kota: "Banjarbaru" }
+    { id: "cctv-119", nama: "Kamera 8 Lapas Banjarbaru", path: "kamera_banjarbaru8", grup: "Lapas Kelas IIB Banjarbaru", kota: "Banjarbaru" },
+
+    // =========================================================
+    // 13. RUTAN KELAS IIB KANDANGAN — 12 KAMERA
+    // =========================================================
+    { id: "cctv-120", nama: "Kamera 1 Rutan Kandangan", path: "kamera_kandangan1", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-121", nama: "Kamera 2 Rutan Kandangan", path: "kamera_kandangan2", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-122", nama: "Kamera 3 Rutan Kandangan", path: "kamera_kandangan3", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-123", nama: "Kamera 4 Rutan Kandangan", path: "kamera_kandangan4", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-124", nama: "Kamera 5 Rutan Kandangan", path: "kamera_kandangan5", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-125", nama: "Kamera 6 Rutan Kandangan", path: "kamera_kandangan6", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-126", nama: "Kamera 7 Rutan Kandangan", path: "kamera_kandangan7", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-127", nama: "Kamera 8 Rutan Kandangan", path: "kamera_kandangan8", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-128", nama: "Kamera 9 Rutan Kandangan", path: "kamera_kandangan9", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-129", nama: "Kamera 10 Rutan Kandangan", path: "kamera_kandangan10", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-130", nama: "Kamera 11 Rutan Kandangan", path: "kamera_kandangan11", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" },
+    { id: "cctv-131", nama: "Kamera 12 Rutan Kandangan", path: "kamera_kandangan12", grup: "Rutan Kelas IIB Kandangan", kota: "Kandangan" }
 ];
 
 // Normalisasi otomatis streamUrl, snapshotUrl, dan status
