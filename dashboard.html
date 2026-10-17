@@ -1,22 +1,16 @@
-<?php
-session_start();
-if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
-    header("Location: index.html");
-    exit;
-}
-header('Content-Type: text/html; charset=utf-8');
-header('Cache-Control: no-store');
-header('X-Frame-Options: DENY');
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: same-origin');
-$dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PANTAUPAS KALSEL &mdash; Command Center</title>
+
+    <script>
+        // Proteksi akses: verifikasi status login klien
+        if (sessionStorage.getItem('is_logged_in') !== 'true') {
+            window.location.replace('index.html');
+        }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +21,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
         tailwind.config = {
             theme: { extend: {
                 fontFamily: { sans: ['"Titillium Web"', 'sans-serif'], mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'] },
-                // Palet resmi (sama dengan halaman login): Midnight Blue #08192B, Gold Dignity #D6A34C, Platinum #E0E2E3
+                // Palet resmi: Midnight Blue #08192B, Gold Dignity #D6A34C, Platinum #E0E2E3
                 colors: { imipas: { blue: '#08192B', blue2: '#0F2A47', blue3: '#163B5E', gold: '#D6A34C', goldSoft: '#E7C481', platinum: '#E0E2E3' } }
             } }
         }
@@ -38,7 +32,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
     <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
 
     <!-- Satu-satunya sumber data kamera: tambah/ubah kamera cukup di file ini -->
-    <script src="data_kamera.js?v=<?php echo (int) $dataVer; ?>"></script>
+    <script src="data_kamera.js?v=20261017"></script>
     <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
     <style>
@@ -525,7 +519,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
                             <LiveClock className="hidden xl:block text-[11.5px] font-medium pr-3 mr-1 border-r border-white/15 text-imipas-platinum/80" />
                             <a href="matrix.html" title="Tampilan Matrix" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="grid" /><span className="hidden sm:inline">Matrix</span></a>
                             <button onClick={() => setShowInfo(true)} title="Informasi Sistem" className={`${navBtn} hover:bg-white/15`} style={navStyle}><Icon name="info" /><span className="hidden sm:inline">Info</span></button>
-                            <a href="logout.php" className={navBtn} style={{ color: '#FDA4AF' }}
+                            <a href="logout.html" onClick={(e) => { e.preventDefault(); sessionStorage.removeItem('is_logged_in'); sessionStorage.clear(); window.location.href = 'index.html'; }} className={navBtn} style={{ color: '#FDA4AF' }}
                                onMouseOver={e => e.currentTarget.style.background = 'rgba(244,63,94,0.15)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
                                 <Icon name="logout" /><span className="hidden sm:inline">Keluar</span>
                             </a>

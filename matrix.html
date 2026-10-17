@@ -1,22 +1,16 @@
-<?php
-session_start();
-if (!isset($_SESSION["is_logged_in"]) || $_SESSION["is_logged_in"] !== true) {
-    header("Location: index.html");
-    exit;
-}
-header('Content-Type: text/html; charset=utf-8');
-header('Cache-Control: no-store');
-header('X-Frame-Options: DENY');
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: same-origin');
-$dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Matrix View &mdash; PANTAUPAS KALSEL</title>
+
+    <script>
+        // Proteksi akses: verifikasi status login klien
+        if (sessionStorage.getItem('is_logged_in') !== 'true') {
+            window.location.replace('index.html');
+        }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +31,7 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
     <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
 
     <!-- Versi cache berubah hanya saat data kamera diubah -->
-    <script src="data_kamera.js?v=<?php echo (int) $dataVer; ?>"></script>
+    <script src="data_kamera.js?v=20261017"></script>
 
     <script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
@@ -102,7 +96,8 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
             mapPin: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z",
             grid: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
             chevronDown: "M19 9l-7 7-7-7",
-            search: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            search: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+            logout: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
         };
         const Icon = ({ name, className = "w-4 h-4", style }) => {
             if (name === 'play') return <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 001.52.85l11-6.86a1 1 0 000-1.7l-11-6.86A1 1 0 008 5.14z" /></svg>;
@@ -538,6 +533,11 @@ $dataVer = @filemtime(__DIR__ . '/data_kamera.js') ?: time();
                                 <button onClick={toggleWall} aria-label={wall ? "Keluar layar penuh" : "Layar penuh semua kamera"} title="Layar penuh (F)" className={`${btn} w-8 hover:bg-white/15`} style={ghost}>
                                     <Icon name={wall ? "minimize" : "maximize"} className="w-3.5 h-3.5" />
                                 </button>
+
+                                <a href="logout.html" onClick={(e) => { e.preventDefault(); sessionStorage.removeItem('is_logged_in'); sessionStorage.clear(); window.location.href = 'index.html'; }} title="Keluar dari sistem" className={`${btn} px-2 hover:bg-rose-500/15`} style={{ ...ghost, color: '#FDA4AF' }}>
+                                    <Icon name="logout" className="w-3.5 h-3.5" />
+                                    <span className="hidden xl:inline text-[11.5px]">Keluar</span>
+                                </a>
 
                                 <LiveClock className="hidden md:block text-[11px] font-medium pl-2.5 ml-0.5 border-l border-white/15 text-imipas-platinum/80" />
                             </div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keluar &mdash; PANTAUPAS Command Center</title>
+    <script>
+        // Bersihkan sesi autentikasi dari client
+        sessionStorage.removeItem('is_logged_in');
+        sessionStorage.clear();
+        // Arahkan kembali ke halaman login
+        window.location.replace('index.html');
+    </script>
+</head>
+<body style="background:#08192B;color:#E0E2E3;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-family:sans-serif;">
+    <p style="font-size:14px;opacity:0.8;">Mengakhiri sesi dan keluar&hellip;</p>
+</body>
+</html>
